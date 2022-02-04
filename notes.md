@@ -44,3 +44,6 @@ View
 - pawnMove
 - captureMaster
 - captureStudent
+
+
+
