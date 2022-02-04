@@ -4,14 +4,22 @@ class Board {
   }
 
   isEmpty(pos) {
-
+    if (!Board.validPos(pos)) {
+      throw new Error('That position is not valid')
+    }
+    return (this.grid[pos[0], pos[1]] === null);  // t or f
   }
 
   // movePiece()  ?
 
+  validPos(pos) {       // static?
+    if (pos[0] < 0 || pos[0] > 4) return false;
+    if (pos[1] < 0 || pos[1] > 4) return false;
+    // needs conditional for card limitation!
+    return true;
+  }
 
-
-  makeGrid() {
+  makeGrid() {          // static?
     let grid = [];
     for (let i = 0; i < 5; i++) {
       grid.push([]);
@@ -22,12 +30,12 @@ class Board {
     return grid;
   }
   
-  makeMoveCards() {
+  makeMoveCards() {     // static?
     
   }
 }
 
-module.exports = Board;
+export default Board;
 
 
 
