@@ -49,7 +49,19 @@ In addition, this project will include:
 - Pawns (circle and triangle): select/deselect (*click*) pawn and *mouseover* their movement cards to highlight possible moves on the grid
 - Move Cards: select/deselct (*click*) movement card to lock their possible moves and select (click) among the hightlighted spaces to move
  
+<br>
+---
+<br> 
 
+![Board Layout](Wireframes/wf_card_layout.png)
+
+### Card Layout
+- One of (16+) movement cards
+- Left box will display card name and possible graphic
+- Right box shows possible movement pattern
+  - Dark box represents current position
+  - Colored boxes represent possible movement by pawn
+- Reverse will aid in card swap "sleight of hand" 
 
 [Wireframes](https://ninjamock.com/s/F41V1Jx)
 
