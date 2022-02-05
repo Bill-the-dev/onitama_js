@@ -1,6 +1,51 @@
 .move-card {
-  min-width: 60px;
-  min-height: 70px;
+  min-width: 75px;
+  min-height: 75px;
   height: 100%;
   perspective: 1000px;
+  border: 1px solid black;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  cursor: pointer; 
+  position: relative;
+  margin:1px;
+
 }
+
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  position: absolute;
+}
+
+.front {
+  background: goldenrod;
+  z-index: 2;
+  backface-visibility: hidden;
+  font-family: 'Nanum Brush Script', cursive;
+  font-size: 18px;
+  
+}
+
+.back {
+  background: seagreen;
+  z-index: 1;
+  transform: rotateX(180deg);
+}
+
+
+/* FLIP LOGIC HERE */
+.move-card:target {
+    transform: rotateX(180deg);
+}
+
+/* 
+.move-card.is_flipped {
+  transform: rotateX(180deg);
+} */
+

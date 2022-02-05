@@ -1,13 +1,13 @@
 import "./styles/index.css"
 import "./styles/cards.css"
 
-document.addEventListener("DOMContentLoaded", () => {
+// document.addEventListener("DOMContentLoaded", () => {
   
 
 
-});
+// });
 
-// const card = document.querySelector('.card__inner');
+// const card = document.querySelector('.move-card');
 
 // card.addEventListener('click', function () {
 //   card.classList.toggle('is-flipped');
