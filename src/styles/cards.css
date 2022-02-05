@@ -1,0 +1,6 @@
+.move-card {
+  min-width: 60px;
+  min-height: 70px;
+  height: 100%;
+  perspective: 1000px;
+}

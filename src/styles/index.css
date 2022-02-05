@@ -1,5 +1,6 @@
+
 * {
-  margin: 0;
+  margin: 0px;
   padding: 0;
 }
 
@@ -14,7 +15,7 @@
   height: 100%; 
   display: grid;
   grid-template-columns: 1fr 0.5fr 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   /* grid-auto-rows: minmax(100px, auto);  */
   /* flex-direction: column; */
   
@@ -23,10 +24,11 @@
 header {
   border-bottom: 2px solid black;
   margin-bottom: 50px;
+  border-style: double;
 }
 
 .title {
-  font-family: 'Comforter', cursive;
+  font-family: 'Nanum Brush Script', cursive;
   font-size: 5rem;
   font-weight: bold;
   text-align: center;
@@ -69,32 +71,42 @@ header {
   display: grid;
   grid-template-columns: repeat(5, 1fr); /* five equal 'fractioned' tracks */
   box-sizing: border-box;  /* board within container */
-  padding: 20px;
+  padding: 0px;
+  border: 2px solid black;
+  border-radius: 6px;
+  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.2);
+
 
 }
 /* em dependent on parent?, rem */
 .square {
-  border: 1px solid black;
+  border: 1px double black;
   display: flex;
-  background-color: burlywood;
+  /* background-color: rgb(172, 123, 59); */
+  background: rgb(232,208,144);
+  background: radial-gradient(circle, rgba(233, 193, 83, 0.953) 1%, rgba(215,152,68,1) 100%);
   min-width: 40px;
   min-height: 40px;
+  border-radius: 3px;
+  /* opacity: 0; */
+
 }
 
 body {
-  background-color: lightgray;
-  ;
+  background: rgb(236,190,70);
+  background: radial-gradient(circle, rgba(236,190,70,0.9416141456582633) 6%, rgba(241,227,196,1) 79%);
+  /* background-color: #EEEE; */
+  /* background-image: linear-gradient( 90deg, #eeb154 10%, #FAD7A1 100%); */
+  /* background-image: url('assets/sayagata-400px.png');
+  background-repeat: repeat;
+  background-size: 400px 400px; */
+
+  margin: 1px;
+  
 }
 
 
-.move-card {
-  min-width: 80px;
-  min-height: 50px;
-  background-color: rgb(233, 208, 175);
-  border-radius: 5px;
-  margin:1rem
 
-}
 
 
 

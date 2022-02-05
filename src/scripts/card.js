@@ -21,3 +21,5 @@ let eel = [[1, -1], [-1, -1], [0, 1]];                // eel
 let cobra = [[0, -1], [1, 1], [-1, 1]];               // cobra
 
 
+// each card should visualize the grid move and title
+// Visual too small?
