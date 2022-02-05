@@ -14,12 +14,16 @@
 #game {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
+  /* grid-auto-rows: minmax(100px, auto);  */
+  /* flex-direction: column; */
 }
 
 header {
   border-bottom: 2px solid black;
+  margin-bottom: 50px;
 }
 
 .title {
@@ -34,6 +38,32 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+#card-opp-container {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#card-deck-container {
+  grid-column: 3;
+  grid-row: 2/3;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+#card-player-container {
+  grid-column: 2/3;
+  grid-row: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 #board {
@@ -42,8 +72,7 @@ header {
   /* five equal 'fractioned' tracks */
   box-sizing: border-box;
   /* board within container */
-  padding: 60px;
-  padding-top: 100px;
+  padding: 20px;
 }
 
 /* em dependent on parent?, rem */
@@ -59,17 +88,15 @@ body {
   background-color: lightgray;
 }
 
-/* Movement Cards */
-#card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: brown;
-}
-
 .move-card {
   min-width: 80px;
+  min-height: 50px;
+  background-color: #e9d0af;
+  border-radius: 5px;
+  margin: 1rem;
 }
+
+/* Grid Layout help: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/
