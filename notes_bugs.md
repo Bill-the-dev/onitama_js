@@ -80,3 +80,13 @@ View
 2/4
 - [clear] `import "./styles/index.css"` was throwing errors due to copy/paste.  The `""` pasted in as typography quotes instead.
 - [clear] nvm 14 and 15 not compatible with M1 macs.  nvm 16 works.  
+
+
+
+
+
+// let onefour = document.querySelector("[data-square='[1, 4]']")
+
+// let card1 = document.querySelector("[data-card-back='5']")
+
+// card1.innerHTML = tiger

@@ -1,5 +1,39 @@
 import "./styles/index.css"
 import "./styles/cards.css"
+import Board from "./scripts/board";
+
+function addGlobalEventListener(type, selector, callback) {
+  document.addEventListener(type, e => {
+    if (e.target.matches(selector)) callback(e)
+  })
+}
+
+
+// new
+const board = new Board('#board');
+
+
+
+
+
+
+
+
+
+
+
+
+// // Get this:
+// addGlobalEventListener("click", "div", e => {
+//   console.log("hi")
+// })
+// // From this:
+// document.addEventListener("click", e => {
+//   if (e.target.matches("div")) {
+//     console.log("you clicked a div");
+//   }
+// })
+
 
 // document.addEventListener("DOMContentLoaded", () => {
   

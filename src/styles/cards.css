@@ -3,12 +3,12 @@
   min-height: 75px;
   height: 100%;
   perspective: 1000px;
-  border: 1px solid black;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer; 
   position: relative;
-  margin:1px;
+  margin:2px;
+
 
 }
 
@@ -19,29 +19,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
   border-radius: 4px;
   position: absolute;
+  
 }
 
 .front {
-  background: goldenrod;
+  /* background: rgb(218, 195, 137); */
   z-index: 2;
   backface-visibility: hidden;
   font-family: 'Nanum Brush Script', cursive;
   font-size: 18px;
+  background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
   
 }
 
 .back {
-  background: seagreen;
+  background: #EEEE;
   z-index: 1;
   transform: rotateX(180deg);
 }
 
 
 /* FLIP LOGIC HERE */
-.move-card:target {
-    transform: rotateX(180deg);
+.move-card:hover {
+  transform: rotateX(180deg);
 }
 
 /* 

@@ -108,4 +108,5 @@ This project will be implemented with the following technologies:
 - Add Multiplayer functionality (remote)
 - Add AI difficulty levels
 - Add card, piece capture, and game state animations
+- Add card movement quotes on play
 

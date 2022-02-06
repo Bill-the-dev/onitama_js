@@ -1,11 +1,15 @@
+import "./card.js";
+
 class Board {
-  constructor() {
+  constructor(selector) {
+    this.element = document.querySelector(selector);
+    console.log(this.element);
     this.grid = Board.makeGrid();
   }
 
   isEmpty(pos) {
     if (!Board.validPos(pos)) {
-      throw new Error('That position is not valid')
+      throw new Error('That position is not valid');
     }
     return (this.grid[pos[0], pos[1]] === null);  // t or f
   }
@@ -19,20 +23,18 @@ class Board {
     return true;
   }
 
-  makeGrid() {          // static?
+  static makeGrid() {          // static?
     let grid = [];
     for (let i = 0; i < 5; i++) {
       grid.push([]);
       for (let j = 0; j < 5; j++) {
         grid[i].push(null);
-      }   
+      }
     }
     return grid;
   }
-  
-  makeMoveCards() {     // static?
-    
-  }
+
+
 }
 
 export default Board;

@@ -47,7 +47,7 @@ header {
   grid-column: 2/3;
   grid-row: 1/2;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
 
@@ -85,7 +85,7 @@ header {
   display: flex;
   /* background-color: rgb(172, 123, 59); */
   background: #e8d090;
-  background: radial-gradient(circle, rgba(233, 193, 83, 0.953) 1%, #d79844 100%);
+  background: radial-gradient(circle, rgba(233, 193, 83, 0.953) 1%, #daa054 100%);
   min-width: 40px;
   min-height: 40px;
   border-radius: 3px;
@@ -94,7 +94,7 @@ header {
 
 body {
   background: #ecbe46;
-  background: radial-gradient(circle, rgba(236, 190, 70, 0.9416141457) 6%, #f1e3c4 79%);
+  background: radial-gradient(circle, rgba(170, 168, 161, 0.942) 6%, #f1ece1 90%);
   /* background-color: #EEEE; */
   /* background-image: linear-gradient( 90deg, #eeb154 10%, #FAD7A1 100%); */
   /* background-image: url('assets/sayagata-400px.png');
@@ -112,12 +112,11 @@ body {
   min-height: 75px;
   height: 100%;
   perspective: 1000px;
-  border: 1px solid black;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
-  margin: 1px;
+  margin: 2px;
 }
 
 .front,
@@ -127,26 +126,28 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
   border-radius: 4px;
   position: absolute;
 }
 
 .front {
-  background: goldenrod;
+  /* background: rgb(218, 195, 137); */
   z-index: 2;
   backface-visibility: hidden;
   font-family: "Nanum Brush Script", cursive;
   font-size: 18px;
+  background-image: linear-gradient(135deg, #ABDCFF 10%, #0396FF 100%);
 }
 
 .back {
-  background: seagreen;
+  background: #EEEE;
   z-index: 1;
   transform: rotateX(180deg);
 }
 
 /* FLIP LOGIC HERE */
-.move-card:target {
+.move-card:hover {
   transform: rotateX(180deg);
 }
 
