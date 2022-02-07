@@ -1,7 +1,5 @@
-// export default Board;  // placed at bottom doesn't work
 
-// export default 
-export class Board {
+export default class Board {
   constructor() {
     this.grid = [];
     for (let i = 0; i < 5; i++) {
@@ -38,7 +36,6 @@ export class Board {
   sayHi() {
     console.log('hiiiiii')
   }
-
 
 
 }

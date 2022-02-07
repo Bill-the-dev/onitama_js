@@ -1,6 +1,11 @@
-// import "./styles/index.css"
-// import "./styles/cards.css"
-import {Game} from "./scripts/game.js";
+import "./styles/index.css"
+import "./styles/cards.css"
+import Game from "./scripts/game.js";
+
+
+window.Game = Game;
+
+
 
 // function addGlobalEventListener(type, selector, callback) {
 //   document.addEventListener(type, e => {
@@ -17,7 +22,7 @@ import {Game} from "./scripts/game.js";
 //       let square = document.createElement("div");
 //       square.classList.add("square");
 //       square.setAttribute("id", [i, j]);
-//       // gameBoard.appendChild(square);
+//       gameBoard.appendChild(square);
 //     }   
 //   }
 // }

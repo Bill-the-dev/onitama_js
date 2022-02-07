@@ -96,7 +96,15 @@ View
 
 2/7
 
-Here come's a long one: 
+[RESOLVED] 
+
+There were two separate issues here.  
+
+1. Don't use node alone.  When I isolated everything down I was trying to debug using node terminal and not the chrome terminal.  Webpack does not pass information to node the way it does to chrome terminal.
+2. Pass information to window inside constructor.  
+`window.board = this.board;`
+
+See screenshots for import/export syntax at end of thread.
 
 I am having import / export problems and cant find the issue.  Hopefully more eyes will spot the error.  
 
