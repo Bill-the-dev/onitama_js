@@ -37,7 +37,8 @@
 }
 
 .back {
-  background: #EEEE;
+  /* background: #EEEE; */
+  background-image: linear-gradient(to bottom, #bdc3c7 50%,  #7d8082 110%);
   z-index: 1;
   transform: rotateX(180deg);
 }

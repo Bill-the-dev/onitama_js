@@ -5,13 +5,17 @@ import Game from "./scripts/game.js";
 
 window.Game = Game;
 
-
-
-// function addGlobalEventListener(type, selector, callback) {
-//   document.addEventListener(type, e => {
-//     if (e.target.matches(selector)) callback(e)
-//   })
+// bindEvents() {
+//   document.querySelectorAll("ul li").forEach((li) => {
+//     li.addEventListener("click", this.handleClick);
+//   });
 // }
+
+function addGlobalEventListener(type, selector, callback) {
+  document.addEventListener(type, e => {
+    if (e.target.matches(selector)) callback(e)
+  })
+}
 
 
 // function createGrid() {

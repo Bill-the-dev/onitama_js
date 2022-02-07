@@ -1,5 +1,4 @@
 
-
 export default class Piece {
   constructor(type, color) {
     this.type = type;

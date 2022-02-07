@@ -1,4 +1,4 @@
-import Player from './player.js';
+// import Player from './player.js';
 import Deck from './deck.js';
 import Board from "./board.js";
 
@@ -7,7 +7,7 @@ export default class Game {
   constructor() {
     this.activeGame = false;
     this.currentPlayerIdx = 0;  // to aid with dealing cards
-    this.players = [new Player(), new Player()];
+    // this.players = [new Player(), new Player()];
     this.deck = new Deck();
     this.board = new Board();
     window.board = this.board;

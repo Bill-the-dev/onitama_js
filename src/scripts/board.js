@@ -1,3 +1,4 @@
+import Piece from "./piece";
 
 export default class Board {
   constructor() {
@@ -6,10 +7,14 @@ export default class Board {
       let row = [];
       for (let j = 0; j < 5; j++) {
         let col = null;
+
         row.push(col);
       }
       this.grid.push(row);
     }
+
+    this.setBoard();
+
   }
 
 
@@ -33,8 +38,43 @@ export default class Board {
     return (this.grid[pos[0], pos[1]] === null);  // t or f
   }
 
+  placePiece(pos, piece) {
+    if (this.isEmpty(pos) && this.validPos(pos)) {
+      return (this.grid[pos[0], pos[1]] === piece);
+    // } else {
+    //   throw new Error('That position is not valid');
+    }
+  }
+
+  setBoard() {
+    const pawnB1 = new Piece('student', 'blue');
+    const pawnB2 = new Piece('student', 'blue');
+    const pawnB3 = new Piece('master', 'blue');
+    const pawnB4 = new Piece('student', 'blue');
+    const pawnB5 = new Piece('student', 'blue');
+
+    this.placePiece([0, 0], pawnB1);
+    this.placePiece([0, 1], pawnB2);
+    this.placePiece([0, 2], pawnB3);
+    this.placePiece([0, 3], pawnB4);
+    this.placePiece([0, 4], pawnB5);
+
+    const pawnR1 = new Piece('student', 'red');
+    const pawnR2 = new Piece('student', 'red');
+    const pawnR3 = new Piece('master', 'red');
+    const pawnR4 = new Piece('student', 'red');
+    const pawnR5 = new Piece('student', 'red');
+
+    this.placePiece([4, 0], pawnR1);
+    this.placePiece([4, 1], pawnR2);
+    this.placePiece([4, 2], pawnR3);
+    this.placePiece([4, 3], pawnR4);
+    this.placePiece([4, 4], pawnR5);
+
+  }
+
   sayHi() {
-    console.log('hiiiiii')
+    console.log('hiiiiii');
   }
 
 
