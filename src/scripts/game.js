@@ -1,8 +1,9 @@
-import Player from './player';
-import Deck from './deck';
-import Board from './board';
+// import Player from './player.js';
+// import Deck from './deck.js';
+import {Board} from "./board.js";
 
-class Game {
+// export default 
+export class Game {
   constructor() {
     this.activeGame = false;
     this.currentPlayerIdx = 0;  // to aid with dealing cards
@@ -34,8 +35,11 @@ class Game {
     this.activeGame = true;
   }
 }
+// export default Game; 
 
-export default Game;
+
+// let game1 = new Game();
+// console.log(game1)
 
 
 // consider adding a KEY:value list of variables like pawn, master, or player 

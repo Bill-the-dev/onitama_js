@@ -1,5 +1,5 @@
 
-class Player {
+export default class Player {
   constructor() {
     this.hand = [];  // possible object? array okay for two things.
   }
@@ -9,5 +9,3 @@ class Player {
   }
 
 }
-
-export default Player;

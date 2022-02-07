@@ -1,6 +1,6 @@
 
 
-class Piece {
+export default class Piece {
   constructor(type, color) {
     this.type = type;
     this.color = color;
@@ -9,4 +9,3 @@ class Piece {
 
 // piece types: student or master
 
-export default Piece;

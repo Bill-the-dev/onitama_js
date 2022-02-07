@@ -1,6 +1,0 @@
-import Board from "./board";
-
-
-
-
-

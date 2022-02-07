@@ -1,5 +1,5 @@
 
-class Card {
+export default class Card {
   constructor(){
     
   }
@@ -27,4 +27,3 @@ const cobra = [[0, -1], [1, 1], [-1, 1]];               // cobra
 
 // const allCards = [tiger, dragon, frog, rabbit, crab, elephant, goose, rooster, monkey, mantis, horse, ox, crane, boar, eel, cobra]
 
-export default Card;

@@ -1,28 +1,28 @@
-import "./styles/index.css"
-import "./styles/cards.css"
-import Board from "./scripts/board";
+// import "./styles/index.css"
+// import "./styles/cards.css"
+import {Game} from "./scripts/game.js";
 
-function addGlobalEventListener(type, selector, callback) {
-  document.addEventListener(type, e => {
-    if (e.target.matches(selector)) callback(e)
-  })
-}
+// function addGlobalEventListener(type, selector, callback) {
+//   document.addEventListener(type, e => {
+//     if (e.target.matches(selector)) callback(e)
+//   })
+// }
 
 
-function createGrid() {
-  const gameBoard = document.getElementById("board");
+// function createGrid() {
+//   const gameBoard = document.getElementById("board");
 
-  for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-      let square = document.createElement("div");
-      square.classList.add("square");
-      square.setAttribute("id", [i, j]);
-      // gameBoard.appendChild(square);
-    }   
-  }
-}
+//   for (let i = 0; i < 5; i++) {
+//     for (let j = 0; j < 5; j++) {
+//       let square = document.createElement("div");
+//       square.classList.add("square");
+//       square.setAttribute("id", [i, j]);
+//       // gameBoard.appendChild(square);
+//     }   
+//   }
+// }
 
-createGrid();
+// createGrid();
 
 //   gameOver() {
 

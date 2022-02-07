@@ -1,6 +1,6 @@
 import Card from './card.js';
 
-class Deck {
+export default class Deck {
   constructor() {
     this.moveCards = Card.allCards;
     this.currentCards = [];
@@ -31,7 +31,7 @@ class Deck {
   // shuffle and card.pop() ?
   // Game obj should be in charge of getting the card and giving it to the player 
 
-export default Deck;
+
 
 
 

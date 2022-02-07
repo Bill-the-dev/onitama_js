@@ -1,5 +1,7 @@
+// export default Board;  // placed at bottom doesn't work
 
-class Board {
+// export default 
+export class Board {
   constructor() {
     this.grid = [];
     for (let i = 0; i < 5; i++) {
@@ -27,31 +29,47 @@ class Board {
   }
 
   isEmpty(pos) {
-    if (!Board.validPos(pos)) {
+    if (!this.validPos(pos)) {
       throw new Error('That position is not valid');
     }
     return (this.grid[pos[0], pos[1]] === null);  // t or f
   }
 
+  sayHi() {
+    console.log('hiiiiii')
+  }
+
 
 
 }
+
+// export default Board; 
+
 //confirmed by printing below with fill: let col = [`[${i},${j}]`];
-let board1 = new Board();
+// let board1 = new Board();
 
-// this.grid[1][1] = 'hello' // assign
-console.log(board1.grid);
-console.log(board1.grid[0][0]);
-console.log(board1.grid[4][4]);
-console.log(board1.grid[1][3]);
-if (validPos([1, 1])) {
-  console.log('valid!');  //valid
-} else {
-  console.log('invalid!');
-}
-this.grid.getPiece([1, 1]);
+// // assignment works!
+// board1.grid[1][1] = 'hello' // assign
+// console.log(board1.grid);
+// console.log(board1.grid[0][0]);
 
-// export default Board;
+
+// //validPos() works!
+//  if (board1.validPos([1, 1])) {
+//   console.log('valid!');  //valid
+// } else {
+//   console.log('invalid!');
+// }
+
+// // getPiece() works!
+// console.log(board1.getPiece([1, 1]));
+
+// // isEmpty() works!
+// console.log(board1.isEmpty([1, 1]));
+
+
+
+
 
 
 // Board should appear: 
