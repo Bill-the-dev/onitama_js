@@ -9,11 +9,37 @@ function addGlobalEventListener(type, selector, callback) {
 }
 
 
-// new
-const board = new Board('#board');
+function createGrid() {
+  const gameBoard = document.getElementById("board");
 
+  for (let i = 0; i < 5; i++) {
+    for (let j = 0; j < 5; j++) {
+      let square = document.createElement("div");
+      square.classList.add("square");
+      square.setAttribute("id", [i, j]);
+      // gameBoard.appendChild(square);
+    }   
+  }
+}
 
+createGrid();
 
+//   gameOver() {
+
+//   }
+
+//   swapMoveCards() {
+
+//   }
+
+//   swapTurn() {
+//     if (this.currentPlayer === 2) {
+//       this.currentPlayer === 1;
+//     } else {
+//       this.currentPlayer === 2;
+//     }
+//   }
+// }
 
 
 

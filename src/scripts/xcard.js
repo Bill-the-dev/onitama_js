@@ -1,12 +1,20 @@
-
 class Card {
-  constructor(){
-    
-  }
-  
-}
+  constructor() {
 
-// this will have move data versus current position? belongs to? 
+  }
+
+  // makeMoveCards() {  
+  //   const moveCards = [];
+  //   while (moveCards.length !== 5) {
+  //     let card = allCards.random();
+  //     if (!moveCards.includes(card)) moveCards.push(card);
+  //   }
+  //   return moveCards;
+  // }
+
+
+
+}
 
 const tiger = [[-1, 0], [2, 0]];                        // tiger
 const dragon = [[-1, 1], [-1, -1], [1, 2], [1, -2]];    // dragon
@@ -25,6 +33,17 @@ const boar = [[1, 0], [0, -1], [0, 1]];                 // boar
 const eel = [[1, -1], [-1, -1], [0, 1]];                // eel
 const cobra = [[0, -1], [1, 1], [-1, 1]];               // cobra
 
-// const allCards = [tiger, dragon, frog, rabbit, crab, elephant, goose, rooster, monkey, mantis, horse, ox, crane, boar, eel, cobra]
+const allCards = [tiger, dragon, frog, rabbit, crab, elephant, goose, rooster, monkey, mantis, horse, ox, crane, boar, eel, cobra]
 
-export default Card;
+
+
+
+
+let card1 = document.querySelector("[data-card-back='1']")
+
+
+
+
+
+// each card should visualize the grid move and title
+// Visual too small?
