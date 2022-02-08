@@ -25,19 +25,19 @@ export default class Board {
     return true;
   }
 
-
+  isEmpty(pos) {
+    // if (!this.validPos(pos)) {
+    //   return false;
+    //   // throw new Error('That position is not valid');
+    // }
+    return (this.grid[pos[0]][pos[1]] === null);  // t or f
+  }
+  
   getPiece(pos) {
     return this.grid[pos[0]][pos[1]];
     // check empty elsewhere? 
   }
-
-  isEmpty(pos) {
-    if (!this.validPos(pos)) {
-      throw new Error('That position is not valid');
-    }
-    return (this.grid[pos[0]][pos[1]] === null);  // t or f
-  }
-
+  
   placePiece(pos, piece) {
     if (this.isEmpty(pos)) {
       return (this.grid[pos[0]][pos[1]] = piece);
@@ -70,6 +70,7 @@ export default class Board {
     const pawnB5 = new Piece('student', 'blue');
 
     this.placePiece([0, 0], pawnB1);
+    
     this.placePiece([0, 1], pawnB2);
     this.placePiece([0, 2], pawnB3);
     this.placePiece([0, 3], pawnB4);

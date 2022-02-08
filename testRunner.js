@@ -1,3 +1,13 @@
+let game1 = new Game();
+game1.board.setBoard();
+game1.start();
+game1.swapTurn()
+
+
+
+
+
+
 const tiger = ["Tiger", [-1, 0], [2, 0]];
 
 function oppMoves(moveArr) {

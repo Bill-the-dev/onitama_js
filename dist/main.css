@@ -136,7 +136,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   border-radius: 4px;
   position: absolute;
 }
@@ -147,13 +147,28 @@ body {
   backface-visibility: hidden;
   font-family: "Comforter", cursive;
   font-size: 1.5rem;
-  background-image: linear-gradient(to bottom left, #3C8CE7 10%, #00EAFF 115%);
+  /* background-image: linear-gradient(to bottom left, #3C8CE7 10%,  #00EAFF 115%);
+  color: #FFF; */
+}
+
+.player-row .move-card .front {
+  background-image: linear-gradient(to bottom left, #0099f7 10%, #81eff9 100%);
+  color: #FFF;
+}
+
+.opponent-row .move-card .front {
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+  color: #FFF;
+}
+
+.on-deck-row .move-card .front {
+  background-image: linear-gradient(to top, #0099f7, #f11712);
   color: #FFF;
 }
 
 .back {
   /* background: #EEEE; */
-  background-image: linear-gradient(to bottom, #bdc3c7 50%, #7d8082 110%);
+  background-image: linear-gradient(to bottom, #d7d7c0 50%, #a5a599 110%);
   z-index: 1;
   transform: rotateX(180deg);
 }
