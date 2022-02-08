@@ -187,10 +187,6 @@ body {
 .move-card.is_flipped {
   transform: rotateX(180deg);
 } */
-/* Superman for on deck */
-/* background-image: linear-gradient(to right, #0099f7, #f11712); */
-/* Red to white for opponent? So-so */
-/* background-image: linear-gradient(to right, #fffbd5, #b20a2c); */
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/pieces.css ***!
   \********************************************************************************************************************************************/

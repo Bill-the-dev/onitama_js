@@ -16,38 +16,50 @@ export default class Deck {
   deal() {
     let card = this.getCard();
     if (!this.currentCards.includes(card)) {
-      debugger
+      // debugger
+      this.viewDealCard(card)
       this.currentCards.push(card);
 
     } else {
       this.deal();
     }
-    this.viewDealCard(card)
+    // this.viewDealCard(card)
     return card;
   }
 
   viewDealCard(card) {
-    let name = card[0];
+    let name = card[0].toLowerCase();
     for (let i = 0; i < imgSources.length; i++) {
       if (imgSources[i].includes(name)){
+        debugger
         let whichCard = this.viewDealTo();
+        let setBack = document.createElement("img");
+        setBack.className = "grid-graphic";
+        setBack.src = `${imgSources[i]}`;
+        whichCard.appendChild(setBack);
+        debugger
       }
     }
-
   }
+
 
   viewDealTo() {
     let cardL = this.currentCards.length;
     if (cardL === 0) {
-      // blue 0  data-card-back="1"
+      return document.getElementById("back1")
+      //  blue 0    back1
     } else if (cardL === 1) {
-      // red 1 data-card-back="4"
+      return document.getElementById("back4")
+      //  red 1     back4
     } else if (cardL === 2) {
-      // blue 2 data-card-back="2"
+      return document.getElementById("back2")
+      //  blue 2    back2
     } else if (cardL === 3) {
-      // red 3 data-card-back="5"
+      return document.getElementById("back5")
+      //  red 3     back5
     } else if (cardL === 4) {
-      // on-deck data-card-back="3"
+      return document.getElementById("back3")
+      //  on-deck   back3
     }
   }
 
