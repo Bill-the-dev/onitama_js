@@ -51,41 +51,44 @@ header {
   padding: 0px;
   border: 2px solid black;
   border-radius: 6px;
-  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.2);
+  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.5);
 }
 
-#card-opp-container {
+.opponent-row {
   grid-column: 2 / 4;
   grid-row: 2 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5px;
   
 }
 
-#card-deck-container {
+.on-deck-row {
   grid-column: 4;
   grid-row: 3/4;
-  display: flex;
+  display:flex;
   align-items: center;
   justify-content: left;
+  margin: 5px;
 }
 
-#card-player-container { 
+.player-row{ 
   grid-column: 2 / 4;
   grid-row: 4; 
   display: flex; 
   align-items: flex-start;
-  justify-content: center;   
+  justify-content: center; 
+  margin: 5px;  
  }
 
-[data-card="1"] {
+/* [data-card="1"] {
   flex: 1; 
 }
 
 [data-card="2"] {
   flex: 1; 
-}
+} */
 
 /* em dependent on parent?, rem */
 .square {
@@ -97,6 +100,8 @@ header {
   min-width: 40px;
   min-height: 40px;
   border-radius: 3px;
+  justify-content: center;
+  align-items: center;
   /* opacity: 0; */
 
 }

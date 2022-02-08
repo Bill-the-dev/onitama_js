@@ -1,0 +1,41 @@
+.blue-student-piece {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
+  /* background: blue; */
+  cursor: pointer; 
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.blue-master-piece {
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid black; */
+  /* background: blue; */
+  background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
+  cursor: pointer; 
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.red-student-piece {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  /* background: red; */
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+  cursor: pointer; 
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.red-master-piece {
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+  /* background: red; */
+  cursor: pointer; 
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}

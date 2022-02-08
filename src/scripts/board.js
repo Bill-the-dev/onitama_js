@@ -15,7 +15,7 @@ export default class Board {
     window.Piece = Piece;  // add to window
 
 
-    
+
   }
 
   validPos(pos) {       // static?
@@ -32,14 +32,23 @@ export default class Board {
     // }
     return (this.grid[pos[0]][pos[1]] === null);  // t or f
   }
-  
+
   getPiece(pos) {
     return this.grid[pos[0]][pos[1]];
     // check empty elsewhere? 
   }
-  
+
+  viewPlacePiece(pos, piece) {
+    let posStr = JSON.stringify(pos);
+    let square = document.getElementById(posStr);
+    let setPiece = document.createElement('div');
+    setPiece.className = `${piece.color}-${piece.type}-piece`;
+    square.appendChild(setPiece);
+  }
+
   placePiece(pos, piece) {
     if (this.isEmpty(pos)) {
+      this.viewPlacePiece(pos, piece);
       return (this.grid[pos[0]][pos[1]] = piece);
     } else {
       throw new Error('That position is not valid');
@@ -70,7 +79,7 @@ export default class Board {
     const pawnB5 = new Piece('student', 'blue');
 
     this.placePiece([0, 0], pawnB1);
-    
+
     this.placePiece([0, 1], pawnB2);
     this.placePiece([0, 2], pawnB3);
     this.placePiece([0, 3], pawnB4);

@@ -53,41 +53,43 @@ header {
   padding: 0px;
   border: 2px solid black;
   border-radius: 6px;
-  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.2);
+  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.5);
 }
 
-#card-opp-container {
+.opponent-row {
   grid-column: 2/4;
   grid-row: 2/3;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 5px;
 }
 
-#card-deck-container {
+.on-deck-row {
   grid-column: 4;
   grid-row: 3/4;
   display: flex;
   align-items: center;
   justify-content: left;
+  margin: 5px;
 }
 
-#card-player-container {
+.player-row {
   grid-column: 2/4;
   grid-row: 4;
   display: flex;
   align-items: flex-start;
   justify-content: center;
+  margin: 5px;
 }
 
-[data-card="1"] {
-  flex: 1;
+/* [data-card="1"] {
+  flex: 1; 
 }
 
 [data-card="2"] {
-  flex: 1;
-}
-
+  flex: 1; 
+} */
 /* em dependent on parent?, rem */
 .square {
   border: 1px double black;
@@ -98,6 +100,8 @@ header {
   min-width: 40px;
   min-height: 40px;
   border-radius: 3px;
+  justify-content: center;
+  align-items: center;
   /* opacity: 0; */
 }
 
@@ -118,15 +122,16 @@ body {
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/cards.css ***!
   \*******************************************************************************************************************************************/
 .move-card {
-  min-width: 90px;
-  min-height: 75px;
-  height: 100%;
+  width: 90px;
+  height: 75px;
   perspective: 1000px;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
   position: relative;
+  border-radius: 4px;
   margin: 2px;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.25);
 }
 
 .front,
@@ -186,6 +191,50 @@ body {
 /* background-image: linear-gradient(to right, #0099f7, #f11712); */
 /* Red to white for opponent? So-so */
 /* background-image: linear-gradient(to right, #fffbd5, #b20a2c); */
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/pieces.css ***!
+  \********************************************************************************************************************************************/
+.blue-student-piece {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  background-image: linear-gradient(to bottom left, #0099f7 10%, #81eff9 100%);
+  /* background: blue; */
+  cursor: pointer;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.blue-master-piece {
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid black; */
+  /* background: blue; */
+  background-image: linear-gradient(to bottom left, #0099f7 10%, #81eff9 100%);
+  cursor: pointer;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.red-student-piece {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* border: 1px solid black; */
+  /* background: red; */
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+  cursor: pointer;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
+
+.red-master-piece {
+  width: 25px;
+  height: 25px;
+  /* border: 1px solid black; */
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+  /* background: red; */
+  cursor: pointer;
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+}
 /*!*************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/index.scss ***!
   \*************************************************************************************************************************************/

@@ -1,6 +1,12 @@
 import "./styles/index.css"
 import "./styles/cards.css"
+import "./styles/pieces.css"
 import Game from "./scripts/game.js";
+import Board from "./scripts/board";
+
+document.addEventListener("DOMContentLoaded", () => {
+  
+
 
 
 window.Game = Game;
@@ -17,6 +23,8 @@ function addGlobalEventListener(type, selector, callback) {
   })
 }
 
+
+});
 
 // function createGrid() {
 //   const gameBoard = document.getElementById("board");
@@ -70,11 +78,7 @@ function addGlobalEventListener(type, selector, callback) {
 // })
 
 
-// document.addEventListener("DOMContentLoaded", () => {
-  
 
-
-// });
 
 // const card = document.querySelector('.move-card');
 

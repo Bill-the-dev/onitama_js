@@ -1,10 +1,12 @@
 import Board from './board.js';
 import Card from './card.js';
+import Player from './player.js';
 
 export default class Deck {
   constructor() {
     this.moveCards = allCards;
     this.currentCards = [];
+    this.players = Game.players;
   }
 
   getCard() {
@@ -14,12 +16,42 @@ export default class Deck {
   deal() {
     let card = this.getCard();
     if (!this.currentCards.includes(card)) {
+      debugger
       this.currentCards.push(card);
+
     } else {
       this.deal();
     }
+    this.viewDealCard(card)
     return card;
   }
+
+  viewDealCard(card) {
+    let name = card[0];
+    for (let i = 0; i < imgSources.length; i++) {
+      if (imgSources[i].includes(name)){
+        let whichCard = this.viewDealTo();
+      }
+    }
+
+  }
+
+  viewDealTo() {
+    let cardL = this.currentCards.length;
+    if (cardL === 0) {
+      // blue 0  data-card-back="1"
+    } else if (cardL === 1) {
+      // red 1 data-card-back="4"
+    } else if (cardL === 2) {
+      // blue 2 data-card-back="2"
+    } else if (cardL === 3) {
+      // red 3 data-card-back="5"
+    } else if (cardL === 4) {
+      // on-deck data-card-back="3"
+    }
+  }
+
+
 
 
 
@@ -43,6 +75,46 @@ const eel = ["Eel", [1, -1], [-1, -1], [0, 1]];                // eel
 const cobra = ["Cobra", [0, -1], [1, 1], [-1, 1]];               // cobra
 
 const allCards = [tiger, dragon, frog, rabbit, crab, elephant, goose, rooster, monkey, mantis, horse, ox, crane, boar, eel, cobra]
+
+const imgSources = [
+  "assets/onitama_grids/tpng/tgrid_boar.png",
+  "assets/onitama_grids/tpng/tgrid_cobra.png",
+  "assets/onitama_grids/tpng/tgrid_crab.png",
+  "assets/onitama_grids/tpng/tgrid_crane.png",
+  "assets/onitama_grids/tpng/tgrid_dragon.png",
+  "assets/onitama_grids/tpng/tgrid_eel.png",
+  "assets/onitama_grids/tpng/tgrid_elephant.png",
+  "assets/onitama_grids/tpng/tgrid_frog.png",
+  "assets/onitama_grids/tpng/tgrid_goose.png",
+  "assets/onitama_grids/tpng/tgrid_horse.png",
+  "assets/onitama_grids/tpng/tgrid_mantis.png",
+  "assets/onitama_grids/tpng/tgrid_monkey.png",
+  "assets/onitama_grids/tpng/tgrid_ox.png",
+  "assets/onitama_grids/tpng/tgrid_rabbit.png",
+  "assets/onitama_grids/tpng/tgrid_rooster.png",
+  "assets/onitama_grids/tpng/tgrid_tiger.png"
+]
+
+
+
+
+const pngBoar = "assets/onitama_grids/tpng/tgrid_boar.png"
+const pngCobra = "assets/onitama_grids/tpng/tgrid_cobra.png"
+const pngCrab = "assets/onitama_grids/tpng/tgrid_crab.png"
+const pngCrane = "assets/onitama_grids/tpng/tgrid_crane.png"
+const pngDragon = "assets/onitama_grids/tpng/tgrid_dragon.png"
+const pngEel = "assets/onitama_grids/tpng/tgrid_eel.png"
+const pngElephant = "assets/onitama_grids/tpng/tgrid_elephant.png"
+const pngFrog = "assets/onitama_grids/tpng/tgrid_frog.png"
+const pngGoose = "assets/onitama_grids/tpng/tgrid_goose.png"
+const pngHorse = "assets/onitama_grids/tpng/tgrid_horse.png"
+const pngMantis = "assets/onitama_grids/tpng/tgrid_mantis.png"
+const pngMonkey = "assets/onitama_grids/tpng/tgrid_monkey.png"
+const pngOx = "assets/onitama_grids/tpng/tgrid_ox.png"
+const pngRabbit = "assets/onitama_grids/tpng/tgrid_rabbit.png"
+const pngRooster = "assets/onitama_grids/tpng/tgrid_rooster.png"
+const pngTiger = "assets/onitama_grids/tpng/tgrid_tiger.png"
+
 
 
 
