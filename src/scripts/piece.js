@@ -6,5 +6,7 @@ export default class Piece {
   }
 }
 
+
+
 // piece types: student or master
 

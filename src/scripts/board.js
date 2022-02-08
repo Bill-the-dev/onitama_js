@@ -12,11 +12,11 @@ export default class Board {
       }
       this.grid.push(row);
     }
+    window.Piece = Piece;  // add to window
 
-    this.setBoard();
 
+    
   }
-
 
   validPos(pos) {       // static?
     if (pos[0] < 0 || pos[0] > 4) return false;
@@ -35,16 +35,32 @@ export default class Board {
     if (!this.validPos(pos)) {
       throw new Error('That position is not valid');
     }
-    return (this.grid[pos[0], pos[1]] === null);  // t or f
+    return (this.grid[pos[0]][pos[1]] === null);  // t or f
   }
 
   placePiece(pos, piece) {
-    if (this.isEmpty(pos) && this.validPos(pos)) {
-      return (this.grid[pos[0], pos[1]] === piece);
-    // } else {
-    //   throw new Error('That position is not valid');
+    if (this.isEmpty(pos)) {
+      return (this.grid[pos[0]][pos[1]] = piece);
+    } else {
+      throw new Error('That position is not valid');
     }
   }
+
+  removePiece(pos) {
+    return (this.grid[pos[0]][pos[1]] = null);
+  }
+
+  movePiece(posStart, posEnd) {
+    // posStart = clicked piece
+    // posEnd = clicked space (highlighted)
+    // if current player color = selected piece color
+    // if selected end position = valid (highlighted)
+    // if move options include (highlighted)
+    let pawn = this.getPiece(posStart);
+    this.removePiece(posStart);
+    return this.placePiece(posEnd, pawn);
+  }
+
 
   setBoard() {
     const pawnB1 = new Piece('student', 'blue');

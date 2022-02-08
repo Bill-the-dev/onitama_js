@@ -1,4 +1,4 @@
-// import Player from './player.js';
+import Player from './player.js';
 import Deck from './deck.js';
 import Board from "./board.js";
 
@@ -6,13 +6,15 @@ import Board from "./board.js";
 export default class Game {
   constructor() {
     this.activeGame = false;
-    this.currentPlayerIdx = 0;  // to aid with dealing cards
-    // this.players = [new Player(), new Player()];
+    this.currentPlayerIdx = 0;  // aid with dealing cards
+    this.players = [new Player("Player 1", "Blue"), new Player("Player 2", "Red")];
+    this.player = this.currentPlayer;
     this.deck = new Deck();
     this.board = new Board();
     window.board = this.board;
     window.deck = this.deck;
-    window.players = this.players
+    window.players = this.players;
+    window.player = this.player;
   }
 
   get currentPlayer() {
@@ -22,7 +24,7 @@ export default class Game {
 
   swapTurn() {
     this.currentPlayerIdx = (this.currentPlayerIdx + 1) % 2;
-    // ensures always 0 or 1 !
+    // ensures always 0 or 1  -working!
   }
 
   dealCard() {
@@ -37,6 +39,81 @@ export default class Game {
     this.onDeckCard = this.deck.deal();
     this.activeGame = true;
   }
+
+  possibleMoves(card, startPos) {
+    if (this.currentPlayerIdx === 0) {
+      this.blueMoves(card, startPos);
+    } else {
+      this.redMoves(card, startPos);
+    }
+  }
+
+  oppMoves(moveArr) {  // flips opponent possible pos 
+    let newMoves = [];
+    let moves = moveArr.slice(1);
+    console.log(moves);
+
+    for (let i = 0; i < moves.length; i++) {
+      let subArr = [];
+      for (let j = 0; j < moves[0].length; j++) {
+        let ele = moves[i][j];
+        if (ele === 0) {
+          subArr.push(ele);
+        } else {
+          subArr.push(moves[i][j] * -1);
+        }
+      }
+      newMoves.push(subArr);
+    }
+    return newMoves;
+  }
+
+
+  blueMoves(card, startPos) {  // need startPos from click!
+    console.log("Blueee");
+    for (let i = 0; i < this.player.hand.length; i++) {  //error here?
+      
+      // if (this.deck.currentCards[i][0] === card) {  // string!
+      if (this.player.hand[i].includes(card)) { 
+        console.log("ok")
+        let moves = this.player.hand[i].slice(1);
+        let possiblePos = []
+        for (let j = 0; j < moves.length; j++) {
+          let row = startPos[0] + moves[j][0];
+          let col = startPos[1] + moves[j][1];
+          possiblePos.push([row, col]);          
+        }
+        return possiblePos;  
+      } else {
+        console.log("Card is not in your hand");  // all returning else
+      }
+    }
+  }
+
+  redMoves(card, startPos) {
+    for (let i = 0; i < this.player.hand.length; i++) {  //error here?
+
+      // if (this.deck.currentCards[i][0] === card) {  // string!
+      if (this.player.hand[i].includes(card)) {
+        console.log("ok");
+        let moves = this.player.hand[i].slice(1);
+        let possiblePos = [];
+        for (let j = 0; j < moves.length; j++) {
+          let row = startPos[0] + moves[j][0];
+          let col = startPos[1] + moves[j][1];
+          possiblePos.push([row, col]);
+        }
+        return possiblePos;
+      } else {
+        console.log("Card is not in your hand");  
+      }
+    }
+    console.log("Reedddd");
+  }
+
+
+
+
 }
 
 

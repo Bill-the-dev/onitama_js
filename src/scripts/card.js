@@ -3,6 +3,12 @@ export default class Card {
   constructor(){
   }
   
+  card_moves() {
+    //
+  }
+
+
+
 }
 
 // this will have move data versus current position? belongs to? 
