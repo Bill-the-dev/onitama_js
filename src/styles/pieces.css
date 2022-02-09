@@ -1,41 +1,65 @@
-.blue-student-piece {
+#pawn {
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  
+}
+
+
+.blue-student-piece.inactive-pawn  {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   /* border: 1px solid black; */
   background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
   /* background: blue; */
-  cursor: pointer; 
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+   
+  
 }
 
-.blue-master-piece {
+.blue-master-piece.inactive-pawn  {
   width: 25px;
   height: 25px;
   /* border: 1px solid black; */
   /* background: blue; */
   background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
-  cursor: pointer; 
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+   
+  
 }
 
-.red-student-piece {
+.red-student-piece.inactive-pawn  {
   width: 20px;
   height: 20px;
   border-radius: 50%;
   /* border: 1px solid black; */
   /* background: red; */
   background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
-  cursor: pointer; 
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+   
+  
 }
 
-.red-master-piece {
+.red-master-piece.inactive-pawn  {
   width: 25px;
   height: 25px;
   /* border: 1px solid black; */
   background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
   /* background: red; */
-  cursor: pointer; 
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.2);
+   
+  
+}
+
+.red-master-piece.active-pawn,
+.blue-master-piece.active-pawn {
+  width: 25px;
+  height: 25px;
+  background-image: linear-gradient(to bottom left, #f8f5d7 10%,  #faf437 100%);
+  transform: scale(1.2);
+}
+
+.red-student-piece.active-pawn, 
+.blue-student-piece.active-pawn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom left, #f8f5d7 10%,  #faf437 100%);
+  transform: scale(1.2);
 }

@@ -47,6 +47,7 @@ export default class Game {
     }
     this.onDeckCard = this.deck.deal();
     this.activeGame = true;
+    this.board.setBoard();
   }
 
   possibleMoves(card, startPos) {  // all possible
@@ -143,7 +144,7 @@ export default class Game {
     }
   }
 
-
+  
 
 
 }

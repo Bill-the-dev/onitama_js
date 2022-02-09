@@ -45,6 +45,7 @@
 .opponent-row .move-card .front {
   background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
   color: #FFF;
+  
 
 }
 
@@ -52,6 +53,10 @@
   background-image: linear-gradient(to top, #0099f7, #f11712);
   color: #FFF;
 
+}
+
+#back4, #back5 {
+  transform: scaleY(-1)
 }
 
 
@@ -64,12 +69,26 @@
 
 
 /* FLIP LOGIC HERE */
-.move-card:hover {
-  transform: rotateX(180deg);
-}
-
-/* 
-.move-card.is_flipped {
+/* .move-card:hover {
   transform: rotateX(180deg);
 } */
 
+
+.move-card.is_flipped {
+  transform: rotateX(180deg);
+}
+
+
+
+/* CSS 
+.card__inner.is-flipped {  
+  transform: rotateX(180deg);
+} */
+
+/* JS 
+const card = document.querySelector('.card__inner');
+
+card.addEventListener('click', function () {
+  card.classList.toggle('is-flipped');
+});
+ */

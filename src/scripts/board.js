@@ -42,7 +42,8 @@ export default class Board {
     let posStr = JSON.stringify(pos);
     let square = document.getElementById(posStr);
     let setPiece = document.createElement('div');
-    setPiece.className = `${piece.color}-${piece.type}-piece`;
+    setPiece.className = `${piece.color}-${piece.type}-piece inactive-pawn`;
+    setPiece.id = "pawn";
     square.appendChild(setPiece);
   }
 

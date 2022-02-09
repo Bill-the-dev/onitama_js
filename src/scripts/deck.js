@@ -31,13 +31,11 @@ export default class Deck {
     let name = card[0].toLowerCase();
     for (let i = 0; i < imgSources.length; i++) {
       if (imgSources[i].includes(name)){
-        debugger
         let whichCard = this.viewDealTo();
         let setBack = document.createElement("img");
         setBack.className = "grid-graphic";
         setBack.src = `${imgSources[i]}`;
         whichCard.appendChild(setBack);
-        debugger
       }
     }
   }
