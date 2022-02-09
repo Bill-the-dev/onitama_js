@@ -1,7 +1,9 @@
 import Piece from "./piece";
+// import { Player } from "./player";
 
 export default class Board {
   constructor() {
+    // this.player = currentPlayer;
     this.grid = [];
     for (let i = 0; i < 5; i++) {
       let row = [];
@@ -13,24 +15,24 @@ export default class Board {
       this.grid.push(row);
     }
     window.Piece = Piece;  // add to window
-
-
-
   }
 
-  validPos(pos) {       // static?
+  // out of bounds only
+  validPos(pos) {  
     if (pos[0] < 0 || pos[0] > 4) return false;
     if (pos[1] < 0 || pos[1] > 4) return false;
-    // needs conditional for card limitation!
     return true;
   }
 
+  // returns true or color
   isEmpty(pos) {
-    // if (!this.validPos(pos)) {
-    //   return false;
-    //   // throw new Error('That position is not valid');
-    // }
-    return (this.grid[pos[0]][pos[1]] === null);  // t or f
+    let that = this;
+    let gridPos = that.grid[pos[0]][pos[1]];
+    if (gridPos === null) {
+      return true;
+    } else {
+      return (that.getPiece(pos)).color;
+    }  
   }
 
   getPiece(pos) {
@@ -39,18 +41,22 @@ export default class Board {
   }
 
   viewPlacePiece(pos, piece) {
+    let that = this;
     let posStr = JSON.stringify(pos);
     let square = document.getElementById(posStr);
     let setPiece = document.createElement('div');
     setPiece.className = `${piece.color}-${piece.type}-piece inactive-pawn`;
     setPiece.id = "pawn";
     square.appendChild(setPiece);
+    that.grid[pos[0]][pos[1]] = piece;
   }
 
   placePiece(pos, piece) {
-    if (this.isEmpty(pos)) {
-      this.viewPlacePiece(pos, piece);
-      return (this.grid[pos[0]][pos[1]] = piece);
+    let that = this;
+    if (that.isEmpty(pos)) {
+      that.viewPlacePiece(pos, piece);
+      piece.position = pos;
+      return (that.grid[pos[0]][pos[1]] = piece);
     } else {
       throw new Error('That position is not valid');
     }

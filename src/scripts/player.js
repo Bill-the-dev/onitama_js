@@ -1,4 +1,4 @@
-
+// export {Player as Player}
 export default class Player {
   constructor(name, color) {
     this.name = name;
@@ -10,6 +10,6 @@ export default class Player {
     this.hand.push(card);
   }
 
-  
+
 
 }
