@@ -11,36 +11,40 @@ export default class Game {
     this.player = this.currentPlayer;
     this.deck = new Deck();
     this.board = new Board();
+    
+    // Window debugging:
     window.board = this.board;
     window.deck = this.deck;
     window.players = this.players;
     window.player = this.player;
     window.otherPlayer = this.otherPlayer
-    // doesn't update at window w/o "game."
+    
   }
 
+  // getter access like a property:
   get currentPlayer() {
     return this.players[this.currentPlayerIdx];
   }
-  // getter, accessed like a property
 
   get otherPlayer() {
     return this.players[((this.currentPlayerIdx + 1) % 2)]
   }
 
+  // always 0 or 1 using %
   swapTurn() {
     this.currentPlayerIdx = (this.currentPlayerIdx + 1) % 2;
     this.player = this.currentPlayer;
     window.player = this.player;
-    // ensures always 0 or 1  - Works!
   }
 
+  // deal alternates between players until 4, then on-deck
   dealCard() {
     let card = this.deck.deal()
-    this.currentPlayer.dealCard(card);  // calling itself?
-    this.swapTurn(); // deals to each player until 4 cards dealt
+    this.currentPlayer.dealCard(card);  
+    this.swapTurn(); 
   }
 
+  // event handled in index.js 
   start() {
     for (let i = 0; i < 4; i++) {
       this.dealCard();
@@ -48,6 +52,7 @@ export default class Game {
     this.onDeckCard = this.deck.deal();
     this.activeGame = true;
     this.board.setBoard();
+    
   }
 
   possibleMoves(card, startPos) {  // all possible
@@ -144,7 +149,16 @@ export default class Game {
     }
   }
 
-  
+  // addGlobalEventListener("click", "#start", e => {
+  //   console.log("You clicked start");
+  //   let startEle = document.querySelector("#start");
+  //   if (this.game.activeGame === false) {
+  //     this.game.start();
+  //     startEle.classList.remove("start-inactive");
+  //     startEle.classList.add("start-active");
+  //     startEle.value = "End Game";
+  //   }
+  // }); 
 
 
 }

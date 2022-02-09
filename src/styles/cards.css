@@ -55,6 +55,8 @@
 
 }
 
+
+/* inverts opponent card view */
 #back4, #back5 {
   transform: scaleY(-1)
 }

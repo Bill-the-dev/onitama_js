@@ -7,26 +7,17 @@ import Board from "./scripts/board";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  let gamePaused = false;
-
-
-
+  let game = new Game();
   window.Game = Game;
-
-  // bindEvents() {
-  //   document.querySelectorAll("ul li").forEach((li) => {
-  //     li.addEventListener("click", this.handleClick);
-  //   });
-  // }
-
+  
   function addGlobalEventListener(type, selector, callback) {
     document.addEventListener(type, e => {
       if (e.target.matches(selector)) callback(e);
     });
   }
-
+  
   // let pawn = document.querySelectorAll("#pawn")
-
+  
   addGlobalEventListener("click", "#pawn", e => {
     console.log("You clicked a pawn");
     let allPawns = document.querySelectorAll("#pawn");
@@ -38,12 +29,42 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     e.target.classList.remove("inactive-pawn");
     e.target.classList.add("active-pawn");
+    
+    
+  });
+  
+  addGlobalEventListener("click", "#start", e => {
+    if (game.activeGame === false) {
+      console.log("You clicked start");
+      game.start();
+      let startEle = document.querySelector(".start-inactive");
+      startEle.classList.remove("start-inactive");
+      startEle.classList.add("start-active");
+      startEle.innerText="End Game";
+  } else {
+      console.log("You clicked end game");
+      history.go(0);  
 
-
+      // resets activeGame, below not needed
+      // let startEle = document.querySelector("#start");
+      // startEle.classList.remove("start-active");
+      // startEle.classList.add("start-inactive");
+      // startEle.innerText = "Start Game";
+    }
+  
   });
 
-
-
+  // addGlobalEventListener("click", ".start-active", e => {
+  // });
+  
+  
+  // bindEvents() {
+  //   document.querySelectorAll("ul li").forEach((li) => {
+  //     li.addEventListener("click", this.handleClick);
+  //   });
+  // }
+  
+  
 
 
 });

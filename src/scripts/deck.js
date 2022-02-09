@@ -6,7 +6,7 @@ export default class Deck {
   constructor() {
     this.moveCards = allCards;
     this.currentCards = [];
-    this.players = Game.players;
+    this.players = game.players;
   }
 
   getCard() {
@@ -17,15 +17,35 @@ export default class Deck {
     let card = this.getCard();
     if (!this.currentCards.includes(card)) {
       // debugger
-      this.viewDealCard(card)
+      this.viewDealCard(card);
+      this.viewToggleFlipAll();
       this.currentCards.push(card);
 
     } else {
       this.deal();
     }
-    // this.viewDealCard(card)
     return card;
   }
+  
+  // addGlobalEventListener("click", "#pawn", e => {
+  //   console.log("You clicked a pawn");
+  //   let allPawns = document.querySelectorAll("#pawn");
+  //   allPawns.forEach(function (pawn) {
+  //   if (pawn.classList.contains("active-pawn")) {
+  //     pawn.classList.remove("active-pawn");
+  //     pawn.classList.add("inactive-pawn");
+  //   }
+  // });
+  // e.target.classList.remove("inactive-pawn");
+  // e.target.classList.add("active-pawn");
+
+  viewToggleFlipAll() {
+    let allCards = document.querySelectorAll(".move-card");
+    allCards.forEach(function (card) {
+      card.classList.add("is_flipped")
+    }) 
+  }
+
 
   viewDealCard(card) {
     let name = card[0].toLowerCase();
@@ -39,7 +59,6 @@ export default class Deck {
       }
     }
   }
-
 
   viewDealTo() {
     let cardL = this.currentCards.length;
