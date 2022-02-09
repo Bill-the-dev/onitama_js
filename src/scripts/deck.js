@@ -26,26 +26,14 @@ export default class Deck {
     }
     return card;
   }
-  
-  // addGlobalEventListener("click", "#pawn", e => {
-  //   console.log("You clicked a pawn");
-  //   let allPawns = document.querySelectorAll("#pawn");
-  //   allPawns.forEach(function (pawn) {
-  //   if (pawn.classList.contains("active-pawn")) {
-  //     pawn.classList.remove("active-pawn");
-  //     pawn.classList.add("inactive-pawn");
-  //   }
-  // });
-  // e.target.classList.remove("inactive-pawn");
-  // e.target.classList.add("active-pawn");
 
+  // toggles is_flipped on/off
   viewToggleFlipAll() {
     let allCards = document.querySelectorAll(".move-card");
     allCards.forEach(function (card) {
-      card.classList.add("is_flipped")
+      card.classList.toggle("is_flipped")
     }) 
   }
-
 
   viewDealCard(card) {
     let name = card[0].toLowerCase();
@@ -58,6 +46,15 @@ export default class Deck {
         whichCard.appendChild(setBack);
       }
     }
+  }
+  // NOT WORKING
+  // flip opp cards, in last viewDealTo 
+  viewInvertOppAll() {
+    let oppCard4 = document.querySelector("#back4");
+    let oppCard5 = document.querySelector("#back5");
+
+    oppCard4.classList.toggle("is_inverted");
+    oppCard5.classList.toggle("is_inverted");
   }
 
   viewDealTo() {
@@ -75,6 +72,7 @@ export default class Deck {
       return document.getElementById("back5")
       //  red 3     back5
     } else if (cardL === 4) {
+      // this.viewInvertOppAll()
       return document.getElementById("back3")
       //  on-deck   back3
     }

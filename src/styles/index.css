@@ -114,7 +114,7 @@ body {
   background: radial-gradient(circle, rgba(170, 168, 161, 0.942) 6%, rgb(241, 236, 225) 90%); */
   /* background-color: #EEEE; */
   /* background-image: linear-gradient( 90deg, #ECE9E6 10%, #94d0f8 100%); */
-  background-image: linear-gradient(to bottom right, #cad0d6 0%, white 100%);
+  background-image: linear-gradient(to bottom right, #faf4eb 0%, rgb(248, 249, 245) 100%);
   /* background-image: url('assets/sayagata-400px.png');
   background-repeat: repeat;
   background-size: 400px 400px; */

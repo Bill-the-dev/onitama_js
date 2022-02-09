@@ -16,8 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
-  // let pawn = document.querySelectorAll("#pawn")
   
+  // select and highlight pawn
   addGlobalEventListener("click", "#pawn", e => {
     console.log("You clicked a pawn");
     let allPawns = document.querySelectorAll("#pawn");
@@ -28,10 +28,20 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
     e.target.classList.remove("inactive-pawn");
-    e.target.classList.add("active-pawn");
-    
-    
+    e.target.classList.add("active-pawn");     
   });
+  
+  addGlobalEventListener("click", ".back", e => {
+    console.log("You clicked a card");
+    let allCards = document.querySelectorAll(".back");
+    allCards.forEach(function (card) {
+      card.classList.remove("active-card");
+      card.classList.add("inactive-card");
+    });
+    e.target.classList.remove("inactive-card");
+    e.target.classList.add("active-card");      
+  });
+
   
   addGlobalEventListener("click", "#start", e => {
     if (game.activeGame === false) {

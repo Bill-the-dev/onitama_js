@@ -111,7 +111,7 @@ body {
   background: radial-gradient(circle, rgba(170, 168, 161, 0.942) 6%, rgb(241, 236, 225) 90%); */
   /* background-color: #EEEE; */
   /* background-image: linear-gradient( 90deg, #ECE9E6 10%, #94d0f8 100%); */
-  background-image: linear-gradient(to bottom right, #cad0d6 0%, white 100%);
+  background-image: linear-gradient(to bottom right, #faf4eb 0%, #f8f9f5 100%);
   /* background-image: url('assets/sayagata-400px.png');
   background-repeat: repeat;
   background-size: 400px 400px; */
@@ -132,7 +132,7 @@ body {
   position: relative;
   border-radius: 4px;
   margin: 2px;
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.25);
+  /* box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, .25); */
 }
 
 .front,
@@ -172,11 +172,6 @@ body {
   color: #FFF;
 }
 
-/* inverts opponent card view */
-#back4, #back5 {
-  transform: scaleY(-1);
-}
-
 .back {
   /* background: #EEEE; */
   background-image: linear-gradient(to bottom, #d7d7c0 50%, #a5a599 110%);
@@ -184,25 +179,24 @@ body {
   transform: rotateX(180deg);
 }
 
-/* FLIP LOGIC HERE */
-/* .move-card:hover {
-  transform: rotateX(180deg);
-} */
+.back.is_inverted {
+  transform: rotate(180deg);
+}
+
+/* Flip card on toggle */
 .move-card.is_flipped {
   transform: rotateX(180deg);
 }
 
-/* CSS 
-.card__inner.is-flipped {  
-  transform: rotateX(180deg);
-} */
-/* JS 
-const card = document.querySelector('.card__inner');
+/* Highlight card on select */
+.move-card .active-card {
+  border: 2px solid #faf437;
+  box-shadow: 0px 3px 18px 3px rgba(249, 242, 45, 0.845);
+}
 
-card.addEventListener('click', function () {
-  card.classList.toggle('is-flipped');
-});
- */
+.move-card .inactive-card {
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.25);
+}
 /*!********************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/pieces.css ***!
   \********************************************************************************************************************************************/

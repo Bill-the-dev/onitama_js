@@ -8,9 +8,7 @@
   position: relative;
   border-radius: 4px;
   margin:2px;
-  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, .25);
-
-
+  /* box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, .25); */
 }
 
 .front,
@@ -22,8 +20,7 @@
   align-items: center;
   /* border: 1px solid black; */
   border-radius: 4px;
-  position: absolute;
-  
+  position: absolute;  
 }
 
 .front {
@@ -45,22 +42,12 @@
 .opponent-row .move-card .front {
   background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
   color: #FFF;
-  
-
 }
 
 .on-deck-row .move-card .front {
   background-image: linear-gradient(to top, #0099f7, #f11712);
   color: #FFF;
-
 }
-
-
-/* inverts opponent card view */
-#back4, #back5 {
-  transform: scaleY(-1)
-}
-
 
 .back {
   /* background: #EEEE; */
@@ -69,28 +56,24 @@
   transform: rotateX(180deg);
 }
 
-
-/* FLIP LOGIC HERE */
-/* .move-card:hover {
-  transform: rotateX(180deg);
-} */
+.back.is_inverted {
+  transform: rotate(180deg);
+}
 
 
+/* Flip card on toggle */
 .move-card.is_flipped {
   transform: rotateX(180deg);
 }
 
+/* Highlight card on select */
+.move-card .active-card {
+  border: 2px solid #faf437;
+  box-shadow: 0px 3px 18px 3px rgba(249, 242, 45, 0.845)
+}
+
+.move-card .inactive-card {
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, .25);
+}
 
 
-/* CSS 
-.card__inner.is-flipped {  
-  transform: rotateX(180deg);
-} */
-
-/* JS 
-const card = document.querySelector('.card__inner');
-
-card.addEventListener('click', function () {
-  card.classList.toggle('is-flipped');
-});
- */
