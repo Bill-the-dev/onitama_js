@@ -134,6 +134,37 @@ body {
   margin: 1px;
 }
 
+.modal__howTo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  background-color: #FFF;
+  height: 100%;
+  width: 60%;
+  padding: 1em;
+}
+
+.modal__fill {
+  font-family: "Nanum Brush Script", cursive;
+  font-size: 1.5em;
+  color: #302f2f;
+}
+
+.modal__fill-active {
+  visibility: visible;
+  z-index: 3;
+}
+
 /* Grid Layout help: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
 /*!*******************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].use[1]!./node_modules/sass-loader/dist/cjs.js!./src/styles/cards.css ***!

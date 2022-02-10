@@ -4,7 +4,8 @@ import "./styles/pieces.css";
 import "./styles/menu.css";
 import Game from "./scripts/game.js";
 import Board from "./scripts/board";
-
+import modalHowTo from "./scripts/modal";
+// import modal from "./scripts/modal__fill";
 document.addEventListener("DOMContentLoaded", () => {
 
   let game = new Game();
@@ -70,32 +71,23 @@ document.addEventListener("DOMContentLoaded", () => {
     game.viewMovePiece(posEndEle);
   })
 
-  // function checkHighlight() {
-  //   let allCards = document.querySelectorAll(".back");
-  //   let allPawns = document.querySelectorAll("#pawn");
-  //   allPawns.forEach(function (pawn) {
-  //     if (pawn.classList.contains("active-pawn")) {
-  //       this.activePawn = pawn;
-  //     }
-  //   });
+  const modalFill = document.getElementsByClassName("modal__howTo")[0];
 
-  //   allCards.forEach(function (card) {
-  //     if (card.classList.contains("active-card")) {
-  //       console.log("Found an active card!");
-  //       this.activeCard = card;
-  //     }
-  //   });
+  // Modal How To on
+  addGlobalEventListener("click", "#how-to-play", e => {
+    e.preventDefault();
+    console.log("on")
+    let howToBtn = e.target;
+    modalFill.classList.add("modal__fill-active")
+  })
 
-  //   if (this.activePawn && this.activeCard) {
-  //     return [this.activePawn, this.activeCard];
-  //   } else {
-  //     return false;
-  //   }
-  // }
-
-  // let boundCheckHighlight = checkHighlight.bind(this);
-
-
+  // Modal How To off
+  modalFill.addEventListener("click", e => {
+    e.preventDefault();
+    console.log("off")
+    let howToBtn = e.target;
+    modalFill.classList.remove("modal__fill-active")
+  })
 
   // Start / End game dynamic
   addGlobalEventListener("click", "#start", e => {
@@ -109,12 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       console.log("You clicked end game");
       history.go(0);
-
-      // resets activeGame, below not needed
-      // let startEle = document.querySelector("#start");
-      // startEle.classList.remove("start-active");
-      // startEle.classList.add("start-inactive");
-      // startEle.innerText = "Start Game";
     }
 
   });

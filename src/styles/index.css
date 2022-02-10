@@ -134,8 +134,39 @@ body {
   background-repeat: repeat;
   background-size: 400px 400px; */
 
-  margin: 1px;
-  
+  margin: 1px; 
+}
+
+.modal__howTo {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 0 auto;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  background-color: #FFF;
+  height: 100%;
+  width: 60%;
+  padding: 1em;
+}
+
+.modal__fill {
+  font-family: 'Nanum Brush Script', cursive;
+  font-size: 1.5em;
+  color: #302f2f; 
+}
+
+
+.modal__fill-active {
+  visibility: visible;
+  z-index: 3;
 }
 
 

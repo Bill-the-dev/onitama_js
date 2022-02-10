@@ -3,6 +3,8 @@
 // game1.start();
 // game1.swapTurn()
 
+// import { setTimeout } from "core-js/es6";
+
 
 
 
@@ -61,15 +63,35 @@ class Tester {
 
   }
 
-  sayHi() {
+  async sayHi() {
     console.log('Hi')
   }
 
-  sayHello() {
+  async sayHello() {
     console.log('Hello');
   } 
   
-  sayWellHello() {
+  async sayWellHello() {
     console.log('Well Hello There');
   }
+
+  displayGreet() {
+    this.sayHi().then(
+      this.sayHello().then(
+        this.sayWellHello()
+      )
+    )
+  }
+
+  displayOther() {
+    this.sayHi().then(
+      setTimeout(() => { this.sayWellHello().then(
+          setTimeout(() => this.sayHello(), 1000)
+        )
+      }, 1000)
+    )
+  }
 }
+let that = new Tester();
+that.displayGreet();
+that.displayOther();

@@ -36,7 +36,7 @@ export default class Deck {
   }
 
   // toggle is_flipped for switch turn
-  viewToggleFlipTurn() {
+  async viewToggleFlipTurn() {
     let that = this;
     let turnCard = document.querySelector(".move-card .active-card");
     // debugger

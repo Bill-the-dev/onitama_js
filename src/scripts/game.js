@@ -36,7 +36,7 @@ export default class Game {
   }
 
   // always 0 or 1 using %
-  swapTurn() {
+  async swapTurn() {
     this.currentPlayerIdx = (this.currentPlayerIdx + 1) % 2;
     this.player = this.currentPlayer;
     window.player = this.player;
@@ -225,7 +225,7 @@ export default class Game {
     }, 2000);
   }
 
-  viewSwapUsedCard(playedCardEl, deckCardEl) {
+  async viewSwapUsedCard(playedCardEl, deckCardEl) {
     console.log("in swap used");
     let that = this;
     let currentHand = that.player.hand;
@@ -274,28 +274,31 @@ export default class Game {
 
     // hide used cards
     setTimeout(() => {
-      that.deck.viewToggleFlipTurn();
-
-      that.viewSwapUsedCard(playedCard, deckCard);
-      // debugger;
-      that.deck.viewToggleFlipTurn();
-
-      // debugger;
+      // flip used
+      that.deck.viewToggleFlipTurn().then(
+        setTimeout(() => {
+          // swap used
+          that.viewSwapUsedCard(playedCard, deckCard).then(
+            setTimeout(() => {
+              // flip back
+              that.deck.viewToggleFlipTurn().then(
+                setTimeout(() => {
+                  // rm highlight
+                  that.viewRemoveCardHighlight().then(
+                    // swap turn @ board
+                    that.swapTurn()
+                    )
+                }, 600)
+              )
+            }, 600)
+          )
+        }, 600)
+      )
     }, 1000);
-
-    // swap used card to on-deck
-
-    // that.viewRemoveCardHighlight();
-
-
-    // show used cards
-
-    // that.swapTurn(); // board swap
-
   }
 
   // card remove highlight
-  viewRemoveCardHighlight() {
+  async viewRemoveCardHighlight() {
     let allCards = document.querySelectorAll(".back");
     allCards.forEach(function (card) {
       card.classList.remove("active-card");
