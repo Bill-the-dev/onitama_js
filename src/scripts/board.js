@@ -18,7 +18,7 @@ export default class Board {
   }
 
   // out of bounds only
-  validPos(pos) {  
+  validPos(pos) {
     if (pos[0] < 0 || pos[0] > 4) return false;
     if (pos[1] < 0 || pos[1] > 4) return false;
     return true;
@@ -32,12 +32,11 @@ export default class Board {
       return true;
     } else {
       return (that.getPiece(pos)).color;
-    }  
+    }
   }
 
   getPiece(pos) {
     return this.grid[pos[0]][pos[1]];
-    // check empty elsewhere? 
   }
 
   viewPlacePiece(pos, piece) {
@@ -48,7 +47,22 @@ export default class Board {
     setPiece.className = `${piece.color}-${piece.type}-piece inactive-pawn`;
     setPiece.id = "pawn";
     square.appendChild(setPiece);
-    that.grid[pos[0]][pos[1]] = piece;
+    that.grid[pos[0]][pos[1]] = piece; // redundant?
+  }
+
+  // after move gets rid of piece view
+  viewRemovePiece(posStart) {
+    let that = this;
+    // debugger;
+    let posStr = JSON.stringify(posStart);
+    let square = document.getElementById(posStr);
+    let child = square.firstChild;
+
+    setTimeout(() => square.child.style = 'opacity = 0.5' , 500);
+    setTimeout(() => square.child.style = 'opacity = 0.3' , 1000);
+    setTimeout(() => square.child.style = 'opacity = 0.2' , 2000);
+    setTimeout(() => square.removeChild(child), 3000);
+
   }
 
   placePiece(pos, piece) {

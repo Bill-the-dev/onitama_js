@@ -39,9 +39,12 @@ export default class Deck {
   viewToggleFlipTurn() {
     let turnCard = document.querySelector(".move-card .active-card");
     turnCard.parentElement.toggle("is_flipped")
-    allCards.forEach(function (card) {
-      card.classList.toggle("is_flipped");
-    });
+
+    let deckCard = document.querySelector("#on-deck-card");
+    setTimeout(() => {
+      deckCard.toggle("is_flipped");
+    }, 1000);  
+    // 1sec timeout
   }
 
 

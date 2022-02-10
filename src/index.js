@@ -66,7 +66,8 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   addGlobalEventListener("click", ".square.active", e => {
-    console.log("thats a good choice");
+    let posEndEle = e.target;
+    game.viewMovePiece(posEndEle);
   })
 
   // function checkHighlight() {

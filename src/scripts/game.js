@@ -73,7 +73,7 @@ export default class Game {
   // limits actual moves by empty and color
   allowedMoves(card, startPos) {
     let that = this;
-    
+
     if (!that.board.validPos(startPos)) return false;
     let allMoves = that.possibleMoves(card, startPos);
     // 
@@ -84,7 +84,7 @@ export default class Game {
         if (that.board.isEmpty(allMoves[i]) === true) {
           realMoves.push(allMoves[i]);
         } else {
-          
+
           if ((that.board.getPiece(allMoves[i])).color !== that.player.color.toLowerCase()) {
             realMoves.push(allMoves[i]);
           }
@@ -205,6 +205,21 @@ export default class Game {
     if (cardNum === 5) return that.players[1].hand[1];
   }
 
+  viewMovePiece(posEndEle) {
+    let that = this;
+    let posStart = that.currentPos(that.activePawn);
+    let posEnd = that.convertStrPos(posEndEle.id);
+    // debugger;
+    that.board.movePiece(posStart, posEnd); 
+    // coded movePiece calls viewPlacePiece
+    let piece = that.board.getPiece(posEnd); // Piece
+    // debugger
+    that.board.viewRemovePiece(posStart);
+
+    // NOW TURN SWAP 
+  }
+
+
   viewMoves() {
     let that = this;
     let highlightMoves = that.allowedMoves(that.targetCard, that.targetPos);
@@ -224,10 +239,18 @@ export default class Game {
       viewSquares[i].classList.remove("inactive");
     }
 
-
-
-
     return highlightMoves;
+  }
+
+  // '[1,2]' to [1,2]
+  convertStrPos(strPos) {
+    let arr = [];
+    let strArr = strPos.slice(1, 4).split(',');
+    // ['1', '2']
+    strArr.forEach((ele) => {
+      arr.push(parseInt(ele));
+    });
+    return arr;
   }
 
 }
