@@ -51,16 +51,16 @@ export default class Board {
   }
 
   // after move gets rid of piece view
-  viewRemovePiece(posStart) {
+  viewRemovePiece(pos) {
     let that = this;
     // debugger;
-    let posStr = JSON.stringify(posStart);
+    let posStr = JSON.stringify(pos);
     let square = document.getElementById(posStr);
     let child = square.firstChild;
 
-    setTimeout(() => square.child.style = 'opacity = 0.5' , 500);
-    setTimeout(() => square.child.style = 'opacity = 0.3' , 1000);
-    setTimeout(() => square.child.style = 'opacity = 0.2' , 2000);
+    // setTimeout(() => square.child.style = 'opacity = 0.5' , 500);
+    // setTimeout(() => square.child.style = 'opacity = 0.3' , 1000);
+    // setTimeout(() => square.child.style = 'opacity = 0.2' , 2000);
     setTimeout(() => square.removeChild(child), 3000);
 
   }

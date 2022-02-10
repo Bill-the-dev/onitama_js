@@ -37,17 +37,17 @@ export default class Deck {
 
   // toggle is_flipped for switch turn
   viewToggleFlipTurn() {
+    let that = this;
     let turnCard = document.querySelector(".move-card .active-card");
-    turnCard.parentElement.toggle("is_flipped")
+    // debugger
+    turnCard.parentElement.classList.toggle("is_flipped")
 
     let deckCard = document.querySelector("#on-deck-card");
-    setTimeout(() => {
-      deckCard.toggle("is_flipped");
-    }, 1000);  
-    // 1sec timeout
+    
+    deckCard.classList.toggle("is_flipped");
   }
 
-
+  // initial deal
   viewDealCard(card) {
     let name = card[0].toLowerCase();
     for (let i = 0; i < imgSources.length; i++) {
@@ -60,7 +60,26 @@ export default class Deck {
       }
     }
   }
-  // NOT WORKING
+  
+  // turn swap deal
+  viewDealSwap(card, cardEl) {
+    let that = this;
+    // remove old img
+    let child = cardEl.firstChild;
+    cardEl.removeChild(child)
+
+    // set new img 
+    let name = card[0].toLowerCase();
+    for (let i = 0; i < imgSources.length; i++) {
+      if (imgSources[i].includes(name)) {
+        let setBack = document.createElement("img");
+        setBack.className = "grid-graphic";
+        setBack.src = `${imgSources[i]}`;
+        cardEl.appendChild(setBack);
+      }
+    }
+  }
+
   // flip opp cards, in last viewDealTo 
   viewInvertOppAll() {
     let oppCard4 = document.querySelector("#back4");
@@ -70,8 +89,10 @@ export default class Deck {
     oppCard5.classList.toggle("is_inverted");
   }
 
+  // inital deal rotation 
   viewDealTo() {
-    let cardL = this.currentCards.length;
+    let that = this;
+    let cardL = that.currentCards.length;
     if (cardL === 0) {
       return document.getElementById("back1")
       //  blue 0    back1
@@ -87,6 +108,30 @@ export default class Deck {
     } else if (cardL === 4) {
       // this.viewInvertOppAll()
       return document.getElementById("back3")
+      //  on-deck   back3
+    }
+  }
+
+  // not needed? using ViewDealSwap
+  viewSwapTo(cardEl) {
+    let that = this;
+    let cardStr = cardEl.id.slice(4);
+    let cardNum = parseInt(cardStr);
+    if (cardNum === 0) {
+      return document.getElementById("back1");
+      //  blue 0    back1
+    } else if (cardNum === 1) {
+      return document.getElementById("back4");
+      //  red 1     back4
+    } else if (cardNum === 2) {
+      return document.getElementById("back2");
+      //  blue 2    back2
+    } else if (cardNum === 3) {
+      return document.getElementById("back5");
+      //  red 3     back5
+    } else if (cardNum === 4) {
+      // this.viewInvertOppAll()
+      return document.getElementById("back3");
       //  on-deck   back3
     }
   }

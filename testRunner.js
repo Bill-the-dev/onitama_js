@@ -51,6 +51,25 @@
 // console.log(currentPos(str1))
 
 
-let arr = [1, 2];
+// let arr = [1, 2];
 
-console.log(JSON.stringify(arr))
+// console.log(JSON.stringify(arr))
+
+
+class Tester {
+  constructor() {
+
+  }
+
+  sayHi() {
+    console.log('Hi')
+  }
+
+  sayHello() {
+    console.log('Hello');
+  } 
+  
+  sayWellHello() {
+    console.log('Well Hello There');
+  }
+}

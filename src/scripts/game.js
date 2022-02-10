@@ -210,13 +210,97 @@ export default class Game {
     let posStart = that.currentPos(that.activePawn);
     let posEnd = that.convertStrPos(posEndEle.id);
     // debugger;
-    that.board.movePiece(posStart, posEnd); 
+    if (board.grid[posEnd[0]][posEnd[1]] !== null) {
+      that.board.removePiece(posEnd);
+      that.board.viewRemovePiece(posEnd);  // takes piece
+    }
+    that.board.movePiece(posStart, posEnd);
     // coded movePiece calls viewPlacePiece
     let piece = that.board.getPiece(posEnd); // Piece
     // debugger
-    that.board.viewRemovePiece(posStart);
+    that.board.viewRemovePiece(posStart); // remove old pos
+    // TURN SWAP 
+    setTimeout(() => {
+      that.viewSwapTurn();
+    }, 2000);
+  }
 
-    // NOW TURN SWAP 
+  viewSwapUsedCard(playedCardEl, deckCardEl) {
+    console.log("in swap used");
+    let that = this;
+    let currentHand = that.player.hand;
+    let playedCard = that.currentCard(playedCardEl);
+    let deckCard = that.onDeckCard;
+    let playedCardIdx = null;
+    for (let i = 0; i < currentHand.length; i++) {
+      // debugger
+      if (playedCard === currentHand[i]) playedCardIdx = i;
+    }
+    // board swap
+    let newPlayerCard = deckCard;
+    let newDeckCard = playedCard;
+    currentHand[playedCardIdx] = newPlayerCard;
+    deckCard = newDeckCard;
+    // debugger;
+
+    // view swap
+    that.deck.viewDealSwap(newPlayerCard, playedCardEl);
+    that.deck.viewDealSwap(newDeckCard, deckCardEl);
+  }
+
+
+  viewSwapTurn() {
+    let that = this;
+
+    let playedCard = document.querySelector(".active-card");
+    let deckCard = document.querySelector("#back3");
+
+
+    // squares remove highlight
+    let allSquares = document.getElementsByClassName('square');
+    for (let i = 0; i < allSquares.length; i++) {
+      allSquares[i].classList.remove("active");
+      allSquares[i].classList.add("inactive");
+    }
+
+    // pawns remove highlight
+    let allPawns = document.querySelectorAll("#pawn");
+    allPawns.forEach(function (pawn) {
+      if (pawn.classList.contains("active-pawn")) {
+        pawn.classList.remove("active-pawn");
+        pawn.classList.add("inactive-pawn");
+      }
+    });
+
+    // hide used cards
+    setTimeout(() => {
+      that.deck.viewToggleFlipTurn();
+
+      that.viewSwapUsedCard(playedCard, deckCard);
+      // debugger;
+      that.deck.viewToggleFlipTurn();
+
+      // debugger;
+    }, 1000);
+
+    // swap used card to on-deck
+
+    // that.viewRemoveCardHighlight();
+
+
+    // show used cards
+
+    // that.swapTurn(); // board swap
+
+  }
+
+  // card remove highlight
+  viewRemoveCardHighlight() {
+    let allCards = document.querySelectorAll(".back");
+    allCards.forEach(function (card) {
+      card.classList.remove("active-card");
+      card.classList.add("inactive-card");
+    });
   }
 
 
