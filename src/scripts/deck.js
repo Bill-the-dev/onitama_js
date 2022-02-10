@@ -1,5 +1,5 @@
 import Board from './board.js';
-import Card from './card.js';
+// import Card from './card.js';
 import Player from './player.js';
 
 export default class Deck {
