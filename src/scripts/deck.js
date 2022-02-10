@@ -27,13 +27,23 @@ export default class Deck {
     return card;
   }
 
-  // toggles is_flipped on/off
+  // toggle is_flipped on/off
   viewToggleFlipAll() {
     let allCards = document.querySelectorAll(".move-card");
     allCards.forEach(function (card) {
       card.classList.toggle("is_flipped")
     }) 
   }
+
+  // toggle is_flipped for switch turn
+  viewToggleFlipTurn() {
+    let turnCard = document.querySelector(".move-card .active-card");
+    turnCard.parentElement.toggle("is_flipped")
+    allCards.forEach(function (card) {
+      card.classList.toggle("is_flipped");
+    });
+  }
+
 
   viewDealCard(card) {
     let name = card[0].toLowerCase();

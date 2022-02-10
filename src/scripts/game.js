@@ -73,6 +73,7 @@ export default class Game {
   // limits actual moves by empty and color
   allowedMoves(card, startPos) {
     let that = this;
+    
     if (!that.board.validPos(startPos)) return false;
     let allMoves = that.possibleMoves(card, startPos);
     // 
@@ -83,19 +84,20 @@ export default class Game {
         if (that.board.isEmpty(allMoves[i]) === true) {
           realMoves.push(allMoves[i]);
         } else {
-          if ((that.board.getPiece(allMoves[i])).color !== that.player.color) {
-          realMoves.push(allMoves[i]);
+          
+          if ((that.board.getPiece(allMoves[i])).color !== that.player.color.toLowerCase()) {
+            realMoves.push(allMoves[i]);
           }
         }
       }
-    return realMoves;
     }
+    return realMoves;
   }
 
   blueMoves(card, startPos) {
     let that = this;
     for (let i = 0; i < that.player.hand.length; i++) {
-      if (that.player.hand[i]=== card) {  // changed from includes
+      if (that.player.hand[i] === card) {  // changed from includes
         console.log("ok");
         let moves = that.player.hand[i].slice(1);
         let possiblePos = [];
@@ -104,7 +106,7 @@ export default class Game {
           let col = startPos[1] + moves[j][1];
           possiblePos.push([row, col]);
         }
-        
+
         return possiblePos;
       } else {
         console.log("Card is not in your hand");  // all returning else
@@ -132,7 +134,7 @@ export default class Game {
 
   redMoves(card, startPos) {
     let that = this;
-    for (let i = 0; i < that.player.hand.length; i++) {  
+    for (let i = 0; i < that.player.hand.length; i++) {
       if (that.player.hand[i] === card) {  // changed from .includes 
         let moves = that.player.hand[i].slice(1);
         let movesRev = (that.oppMoves(moves));
@@ -198,7 +200,7 @@ export default class Game {
     let cardNum = parseInt(cardStr);
     if (cardNum === 1) return that.players[0].hand[0];
     if (cardNum === 2) return that.players[0].hand[1];
-    if (cardNum === 3) return null; // need onDeck
+    if (cardNum === 3) return null; // need onDeck? Maybe not.
     if (cardNum === 4) return that.players[1].hand[0];
     if (cardNum === 5) return that.players[1].hand[1];
   }
@@ -206,6 +208,25 @@ export default class Game {
   viewMoves() {
     let that = this;
     let highlightMoves = that.allowedMoves(that.targetCard, that.targetPos);
+    let viewSquares = [];
+    for (let i = 0; i < highlightMoves.length; i++) {
+      let squareSelector = JSON.stringify(highlightMoves[i]);
+      let square = document.getElementById(squareSelector);
+      viewSquares.push(square);
+    }
+    let allSquares = document.getElementsByClassName('square');
+    for (let i = 0; i < allSquares.length; i++) {
+      allSquares[i].classList.remove("active");
+      allSquares[i].classList.add("inactive");
+    }
+    for (let i = 0; i < viewSquares.length; i++) {
+      viewSquares[i].classList.add("active");
+      viewSquares[i].classList.remove("inactive");
+    }
+
+
+
+
     return highlightMoves;
   }
 

@@ -36,16 +36,21 @@
 // console.log(newM);
 
 
-function currentPos() {
-  let pos = [];
-  let posStr = this.parentElement.id;
-  let strArr = posStr.slice(1, posStr.length).split(",");
-  for (let i = 0; i < strArr.length; i++) {
-    pos.push((parseInt(strArr[i])));
-  }
-  return pos;
-}
+// function currentPos() {
+//   let pos = [];
+//   let posStr = this.parentElement.id;
+//   let strArr = posStr.slice(1, posStr.length).split(",");
+//   for (let i = 0; i < strArr.length; i++) {
+//     pos.push((parseInt(strArr[i])));
+//   }
+//   return pos;
+// }
 
-let str1 = '[4,3]';
+// let str1 = '[4,3]';
 
-console.log(currentPos(str1))
+// console.log(currentPos(str1))
+
+
+let arr = [1, 2];
+
+console.log(JSON.stringify(arr))

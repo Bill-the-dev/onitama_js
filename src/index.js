@@ -65,6 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+  addGlobalEventListener("click", ".square.active", e => {
+    console.log("thats a good choice");
+  })
+
   // function checkHighlight() {
   //   let allCards = document.querySelectorAll(".back");
   //   let allPawns = document.querySelectorAll("#pawn");

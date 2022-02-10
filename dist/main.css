@@ -91,7 +91,7 @@ header {
   flex: 1; 
 } */
 /* em dependent on parent?, rem */
-.square {
+.square.inactive {
   border: 0.5px solid #3a3a3a;
   display: flex;
   /* background-color: rgb(172, 123, 59); */
@@ -103,6 +103,22 @@ header {
   justify-content: center;
   align-items: center;
   box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.5);
+  /* opacity: 0; */
+}
+
+.square.active {
+  border: 0.5px solid #3a3a3a;
+  display: flex;
+  /* background-color: rgb(172, 123, 59); */
+  background: #7eeb8e;
+  background: radial-gradient(circle, #DBE6F6 1%, #9fe98c 100%);
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.5);
+  cursor: pointer;
   /* opacity: 0; */
 }
 
