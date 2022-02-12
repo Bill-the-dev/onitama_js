@@ -4,8 +4,7 @@ import "./styles/pieces.css";
 import "./styles/menu.css";
 import Game from "./scripts/game.js";
 import Board from "./scripts/board";
-import modalHowTo from "./scripts/modal";
-// import modal from "./scripts/modal__fill";
+import { modalFill } from "./scripts/modal";
 document.addEventListener("DOMContentLoaded", () => {
 
   let game = new Game();
@@ -66,28 +65,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+  // move pawn to square 
   addGlobalEventListener("click", ".square.active", e => {
     let posEndEle = e.target;
     game.viewMovePiece(posEndEle);
-  })
+  });
 
-  const modalFill = document.getElementsByClassName("modal__howTo")[0];
+  // Modal consts
+  let modalHowTo = document.querySelector(".modal__howTo");
+  let modalView = document.querySelector(".modal__fill");
+  document.querySelector(".modal__fill").innerHTML = modalFill;
+
+  // const sanitizer = new Sanitizer(); 
 
   // Modal How To on
   addGlobalEventListener("click", "#how-to-play", e => {
     e.preventDefault();
-    console.log("on")
-    let howToBtn = e.target;
-    modalFill.classList.add("modal__fill-active")
-  })
+    console.log("on");
+    // modalView.setHTML("Hellooooooo");
+    // modalView.innerHTML = modalFill;
+    // document.querySelector(".modal__fill").innerHTML = modalFill;
+    // document.querySelector(".modal__fill").innerHTML = modalFill;
+    modalHowTo.classList.add("modal__fill-active");
+  });
 
   // Modal How To off
   modalFill.addEventListener("click", e => {
     e.preventDefault();
-    console.log("off")
-    let howToBtn = e.target;
-    modalFill.classList.remove("modal__fill-active")
-  })
+    console.log("off");
+    modalFill.classList.remove("modal__fill-active");
+  });
 
   // Start / End game dynamic
   addGlobalEventListener("click", "#start", e => {
@@ -105,7 +112,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
-  // addGlobalEventListener("click", ".start-active", e => {
+
+});
+
+// addGlobalEventListener("click", ".start-active", e => {
   // });
 
 
@@ -114,28 +124,6 @@ document.addEventListener("DOMContentLoaded", () => {
   //     li.addEventListener("click", this.handleClick);
   //   });
   // }
-
-
-
-
-});
-
-
-
-//   gameOver() {}
-
-//   swapMoveCards() {}
-
-//   swapTurn() {
-//     if (this.currentPlayer === 2) {
-//       this.currentPlayer === 1;
-//     } else {
-//       this.currentPlayer === 2;
-//     }
-//   }
-// }
-
-
 
 // // Get this:
 // addGlobalEventListener("click", "div", e => {
@@ -147,21 +135,3 @@ document.addEventListener("DOMContentLoaded", () => {
 //     console.log("you clicked a div");
 //   }
 // })
-
-
-
-
-// const card = document.querySelector('.move-card');
-
-// card.addEventListener('click', function () {
-//   card.classList.toggle('is-flipped');
-// });
-
-
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   debugger;
-//   const game = new Game();
-//   const rootEl = document.querySelector(".ttt");
-//   new View(game, rootEl);
-// });

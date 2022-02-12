@@ -142,7 +142,7 @@ body {
   width: 100%;
   display: flex;
   position: fixed;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.25);
   margin: 0 auto;
   visibility: hidden;
   justify-content: center;
@@ -160,9 +160,9 @@ body {
 .modal__fill {
   font-family: 'Nanum Brush Script', cursive;
   font-size: 1.5em;
-  color: #302f2f; 
+  color: #302f2f;
+  z-index: 4; 
 }
-
 
 .modal__fill-active {
   visibility: visible;
