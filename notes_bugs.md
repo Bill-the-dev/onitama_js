@@ -8,6 +8,9 @@
   - designed to set grid attr to the winning color on true
   - have not decided where to call, issue with place and remove methods need resolution first
 
+*How to Play modal*
+- HTML formatting not correct.  Font issue? Pojo issue?
+
 
 
 

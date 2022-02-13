@@ -98,16 +98,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Start / End game dynamic
   addGlobalEventListener("click", "#start", e => {
+    let body = document.querySelector(".body");
+    let startEle = document.querySelector(".start-inactive");
+    
     if (game.activeGame === false) {
       console.log("You clicked start");
       game.start();
-      let startEle = document.querySelector(".start-inactive");
+      
       startEle.classList.remove("start-inactive");
       startEle.classList.add("start-active");
+      body.classList.remove("turn-null");
+      body.classList.add("turn-blue");
       startEle.innerText = "End Game";
     } else {
       console.log("You clicked end game");
-      history.go(0);
+      body.classList.add("turn-null");
+      
+      setTimeout(() => {
+        body.classList.remove("turn-blue");
+        body.classList.remove("turn-red");
+        history.go(0);
+      }, 3001);
     }
 
   });

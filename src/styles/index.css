@@ -6,9 +6,53 @@
 
 body {
   background-color: #aee1f9;
-  background-image: linear-gradient(315deg, #aee1f9 0%, #f6ebe6 74%);
-  margin: 1px; 
+  background-image: linear-gradient(45deg, #aee1f9 0%, #f6ebe6 74%);
+  background-size: 400%;
+  margin: 0px; 
+  background-position: center;
 }
+
+/* idea: animate 5s transition on turn flip */
+
+.turn-blue {
+  animation: bg-animationBlue 5s;
+  animation-fill-mode: forwards;
+}
+
+.turn-red {
+  animation: bg-animationBlue 5s;
+  animation-fill-mode: forwards;
+}
+
+.turn-null {
+  animation: bg-animationNull 2s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bg-animationRed {
+  0% {
+    
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animationBlue {
+  0% {
+  
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+@keyframes bg-animationNull {
+  0% {}
+  100% { background-position: center; }
+}
+
+
 
 #container {
   width: 100%;
@@ -21,7 +65,7 @@ body {
   height: 100%; 
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: .25fr 1fr 2fr 1fr .25fr;
+  grid-template-rows: .1fr 1fr 2fr 1fr .25fr;
   /* grid-auto-rows: minmax(100px, auto);  */
   /* flex-direction: column; */
   
