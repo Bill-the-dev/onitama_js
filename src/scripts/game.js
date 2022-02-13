@@ -241,6 +241,7 @@ export default class Game {
     let newDeckCard = playedCard;
     currentHand[playedCardIdx] = newPlayerCard;
     deckCard = newDeckCard;
+    this.onDeckCard = newDeckCard; // new
     // debugger;
 
     // view swap

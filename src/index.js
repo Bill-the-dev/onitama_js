@@ -90,10 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Modal How To off
-  modalFill.addEventListener("click", e => {
+  modalHowTo.addEventListener("click", e => {
     e.preventDefault();
     console.log("off");
-    modalFill.classList.remove("modal__fill-active");
+    modalHowTo.classList.remove("modal__fill-active");
   });
 
   // Start / End game dynamic

@@ -1,4 +1,4 @@
-// export const modalFill = 
+export const modalFill = 
 `
   <h2>How to Play Onitama</h2>
 
