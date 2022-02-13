@@ -1,11 +1,12 @@
 export const modalFill = 
 `
   <h2>How to Play Onitama</h2>
-
+  <br>
   <p>
     Onitama is simple and quick variation on chess.  Games typically take 5-15 minutes.
-
+  <br>
   <h3>Setup and the Board</h3>
+    <br>
     <ul>
       <li>Press the <u>Start Game</u> button.</li>
 
@@ -23,9 +24,9 @@ export const modalFill =
 
       <li>Player 1 goes first!</li>
     </ul> 
-
+<br>
   <h3>1. Move and Attack</h3>
-
+<br>
     <ul>
       <li>Select (click) one of your pawns. Selected pawns will highlight yellow. </li>
       <li>Select (click) one of your cards. Selected cards will highlight yellow.</li>
@@ -34,23 +35,23 @@ export const modalFill =
       <li>If the tile contains an enemy pawn, it will be 'captured' and removed from the board.</li>
     </ul>
 
-
+<br>
     <h3>2. Swap Turns and Cards</h3>
-
+<br>
     <ul>
       <li>The move card you used will flip and be exchanged for the move card outside the board, a new movement for next turn!</li>
       <li>Be careful! At the end of your opponents turn they will also exchange, and gain the move you just used!</li>
     </ul>
-
+<br>
     <h3>3. Win the Game</h3>
-
+<br>
     There are two ways to win the game:
     <ol>
       <li><b>Way of the Stone:</b> win by capturing your opponent's 'Master' pawn.</li>
       <li><b>Way of the Stream:</b> win by moving your own 'Master' into your opponents 'Temple Arch' space (the 'Master' starting space).</li>
     </ol>
 
-
+<br>
     <h3>About</h3>
     Onitama is a two-player chess variant where the player moves pawns across a 5x5 grid using a set of five movement cards.
     <br>

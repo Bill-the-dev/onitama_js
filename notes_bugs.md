@@ -1,6 +1,12 @@
-## Known Bugs 
+## Known Bugs && WIP
  
+`grid.placePiece` and `grid.removePiece`
+  - possible error, does not remove opposite color object if capture?
 
+
+`grid.winStone` and `grid.winStream`
+  - designed to set grid attr to the winning color on true
+  - have not decided where to call, issue with place and remove methods need resolution first
 
 
 

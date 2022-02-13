@@ -4,7 +4,7 @@ import Piece from "./piece";
 export default class Board {
   constructor() {
     // this.player = currentPlayer;
-    this.grid = [];
+    this.grid = [];   
     for (let i = 0; i < 5; i++) {
       let row = [];
       for (let j = 0; j < 5; j++) {
@@ -14,6 +14,10 @@ export default class Board {
       }
       this.grid.push(row);
     }
+    this.redShrine = this.grid[4][2];
+    this.blueShrine = this.grid[0][2];
+    this.winStone = null;
+    this.winStream = null;
     window.Piece = Piece;  // add to window
   }
 
@@ -53,16 +57,10 @@ export default class Board {
   // after move gets rid of piece view
   viewRemovePiece(pos) {
     let that = this;
-    // debugger;
     let posStr = JSON.stringify(pos);
     let square = document.getElementById(posStr);
     let child = square.firstChild;
-
-    // setTimeout(() => square.child.style = 'opacity = 0.5' , 500);
-    // setTimeout(() => square.child.style = 'opacity = 0.3' , 1000);
-    // setTimeout(() => square.child.style = 'opacity = 0.2' , 2000);
-    setTimeout(() => square.removeChild(child), 3000);
-
+    setTimeout(() => square.removeChild(child), 2000);
   }
 
   placePiece(pos, piece) {
@@ -71,8 +69,21 @@ export default class Board {
       that.viewPlacePiece(pos, piece);
       piece.position = pos;
       return (that.grid[pos[0]][pos[1]] = piece);
-    } else {
-      throw new Error('That position is not valid');
+    }
+  }
+  
+  
+  // win condition capture
+  winStone(endPos, piece) {
+
+  }
+
+  // win condition shrine
+  winStream(endPos, piece) {
+    if (piece.type === "master" && piece.color === "blue" && pos === this.redShrine) { 
+      this.winStream === "blue";
+    } else if (piece.type === "master" && piece.color === "red" && pos === this.blueShrine) {
+      this.winStream === "red";
     }
   }
 
@@ -81,11 +92,6 @@ export default class Board {
   }
 
   movePiece(posStart, posEnd) {
-    // posStart = clicked piece
-    // posEnd = clicked space (highlighted)
-    // if current player color = selected piece color
-    // if selected end position = valid (highlighted)
-    // if move options include (highlighted)
     let pawn = this.getPiece(posStart);
     this.removePiece(posStart);
     return this.placePiece(posEnd, pawn);
