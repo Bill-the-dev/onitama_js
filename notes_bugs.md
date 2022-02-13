@@ -1,15 +1,9 @@
 ## Known Bugs 
  
-- `viewSwapUsedCard()`
-  - one element eventually 'takes over' the board on swap.  Reassignment stuck? Img appears to be accurate to movement pattern, it is the pattern itself that is not changing.
 
 
-- *Random Card Deal* 
-  - Not sure if some doubles are dealt occasionally or if it is only the above `viewDealSwap` bug.  Likely the latter.
 
 
-- *Modal Toggle*
-  - innerHTML, etc refused to print.  Substituted with an `iframe` element in the meantime.
 
 
 ## Design and Structure
