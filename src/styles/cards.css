@@ -31,12 +31,12 @@
 }
 
 .player-row .move-card .front {
-  background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
+  background-image: linear-gradient(to bottom, #0099f7 10%,  #81eff9 100%);
   color: #FFF;
 }
 
 .opponent-row .move-card .front {
-  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+  background-image: linear-gradient(to bottom, #f8a7a6 0%, #ce0502 100%);
   color: #FFF;
 }
 
@@ -46,7 +46,12 @@
 }
 
 .back {
-  background-image: linear-gradient(to bottom, #e4e4ca 80%,  #c4c4c0 110%);
+/* background-color: #e7eff9;
+background-image: linear-gradient(315deg, #e7eff9 0%, #cfd6e6 74%); */
+/* background-color: #d9d9d9;
+background-image: linear-gradient(315deg, #d9d9d9 0%, #f6f2f2 74%); */
+background-color: #fffffc;
+background-image: linear-gradient(to bottom, #f0f0d7 0%, #dedacf 74%);
   z-index: 1;
   transform: rotateX(180deg);
 }

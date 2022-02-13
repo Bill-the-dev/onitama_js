@@ -1,6 +1,9 @@
 
 .menu-container {
-  font-family: 'Nanum Brush Script', cursive;  
+  font-family: 'Quicksand', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  font-size: 0.75rem;
+  color: #302f2f; 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
