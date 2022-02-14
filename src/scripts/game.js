@@ -251,9 +251,16 @@ export default class Game {
 
   viewSwapTurn() {
     let that = this;
-
+    // debugger
     let playedCard = document.querySelector(".active-card");
     let deckCard = document.querySelector("#back3");
+    let body = document.querySelector(".body");
+    if (that.currentPlayerIdx === 0) {
+      // body.classList.remove("turn-blue")
+      body.classList.add("turn-red");
+    } else {
+      body.classList.add("turn-blue")
+    }
 
 
     // squares remove highlight

@@ -12,6 +12,11 @@
 - HTML formatting not correct.  Font issue? Pojo issue?
 
 
+*Turn transition background*
+- Start button template works! Now to figure out turn tracking to call red/blue alternate
+
+*Turn transition card* 
+- Flip transluscent over to indicate blue/red turn. Above and below the onDeck.
 
 
 

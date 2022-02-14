@@ -20,7 +20,7 @@ body {
 }
 
 .turn-red {
-  animation: bg-animationBlue 5s;
+  animation: bg-animationRed 5s;
   animation-fill-mode: forwards;
 }
 
@@ -30,21 +30,13 @@ body {
 }
 
 @keyframes bg-animationRed {
-  0% {
-    
-  }
-  100% {
-    background-position: left;
-  }
+  0% { }
+  100% { background-position: right; }
 }
 
 @keyframes bg-animationBlue {
-  0% {
-  
-  }
-  100% {
-    background-position: left;
-  }
+  0% {}
+  100% { background-position: left; }
 }
 
 @keyframes bg-animationNull {
