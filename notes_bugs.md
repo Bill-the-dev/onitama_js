@@ -13,7 +13,7 @@
 
 
 *Turn transition background*
-- Start button template works! Now to figure out turn tracking to call red/blue alternate
+- Start button template works, alternate works.  Too harsh when color transition starts.
 
 *Turn transition card* 
 - Flip transluscent over to indicate blue/red turn. Above and below the onDeck.

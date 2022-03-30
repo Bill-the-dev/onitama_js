@@ -354,28 +354,3 @@ export default class Game {
 
 
 // consider adding a KEY:value list of variables like pawn, master, or player 
-// also where to keep card objects?
-
-
-
-// function addGlobalEventListener(type, selector, callback) {
-//   document.addEventListener(type, e => {
-//     if (e.target.matches(selector)) callback(e);
-//   });
-// }
-
-
-// function createGrid() {
-//   const gameBoard = document.getElementById("board");
-
-//   for (let i = 0; i < 5; i++) {
-//     for (let j = 0; j < 5; j++) {
-//       let square = document.createElement("div");
-//       square.classList.add("square");
-//       square.setAttribute("id", [i, j]);
-//       // gameBoard.appendChild(square);
-//     }
-//   }
-// }
-
-// createGrid();
