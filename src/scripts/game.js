@@ -6,6 +6,7 @@ import Player from "./player";
 export default class Game {
   constructor() {
     this.activeGame = false;
+    this.gameWin = false;
     this.targetPos = null;    // checkHighlight
     this.targetCard = null;
     this.targetMoves = null;
@@ -246,6 +247,27 @@ export default class Game {
     that.deck.viewDealSwap(newDeckCard, deckCardEl);
   }
 
+  // checkWinStream() {
+  //   debugger;
+  //   let that = this
+  //   let masterRed = document.querySelector(".red-master-piece");
+  //   let masterBlue = document.querySelector(".blue-master-piece");
+  //   console.log(masterBlue)
+  //   console.log(masterRed)
+  //   if (masterRed.parentElement.id === "[0,2]") {
+  //     return this.gameWin("red", "stream")
+  //   } else if (masterBlue.parentElement.id === "[4,2]") {
+  //     return this.gameWin("blue", "stream")
+  //   }
+  // }
+
+  // checkWinStone() {
+
+  // }
+
+  // gameWin(colorStr, typeStr) {
+  //   console.log(`${colorStr} wins by ${typeStr}!`)
+  // }
 
   viewSwapTurn() {
     let that = this;
@@ -253,16 +275,21 @@ export default class Game {
     let playedCard = document.querySelector(".active-card");
     let deckCard = document.querySelector("#back3");
     let body = document.querySelector(".body");
-    let turnRedCircle = document.querySelector(".turn-red-circle") 
-    let turnBlueCircle = document.querySelector(".turn-blue-circle") 
+    let turnRedCircle = document.querySelector(".turn-red-circle");
+    let turnBlueCircle = document.querySelector(".turn-blue-circle");
+
+    debugger
+    // that.board.checkWinStone();
+    that.board.checkWinStream();
+
     if (that.currentPlayerIdx === 0) {
       // body.classList.remove("turn-blue")
       body.classList.replace("turn-blue", "turn-red");
       turnBlueCircle.style.visibility = 'hidden';
       turnRedCircle.style.visibility = 'visible';
-      
+
     } else {
-      body.classList.replace("turn-red", "turn-blue")
+      body.classList.replace("turn-red", "turn-blue");
       turnRedCircle.style.visibility = 'hidden';
       turnBlueCircle.style.visibility = 'visible';
 
@@ -285,6 +312,8 @@ export default class Game {
       }
     });
 
+
+    
     // hide used cards
     setTimeout(() => {
       // flip used
@@ -300,13 +329,13 @@ export default class Game {
                   that.viewRemoveCardHighlight().then(
                     // swap turn @ board
                     that.swapTurn()
-                    )
+                  );
                 }, 600)
-              )
+              );
             }, 600)
-          )
+          );
         }, 600)
-      )
+      );
     }, 1000);
   }
 
