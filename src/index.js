@@ -1,7 +1,4 @@
-import "./styles/index.css";
-import "./styles/cards.css";
-import "./styles/pieces.css";
-import "./styles/menu.css";
+import "./index.scss"
 import Game from "./scripts/game.js";
 import Board from "./scripts/board";
 import { modalFill } from "./scripts/modal";
@@ -100,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
   addGlobalEventListener("click", "#start", e => {
     let body = document.querySelector(".body");
     let startEle = document.querySelector(".start-inactive");
+    let turnRedCircle = document.querySelector(".turn-red-circle");
+    let turnBlueCircle = document.querySelector(".turn-blue-circle") 
     
     if (game.activeGame === false) {
       console.log("You clicked start");
@@ -110,6 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
       body.classList.remove("turn-null");
       body.classList.add("turn-blue");
       startEle.innerText = "End Game";
+      turnRedCircle.style.visibility = 'hidden';
+      turnBlueCircle.style.visibility = 'visible';
     } else {
       console.log("You clicked end game");
       body.classList.add("turn-null");

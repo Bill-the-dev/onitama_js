@@ -22,22 +22,20 @@
       <div class="modal__fill" style="list-style: circle"></div>
     </div>
   </div>
-  <div id="container">
-    <header>
-      <h1 class="title">Onitama</h1>
-    </header>
-
+  <div id="container">    
     <div id="game">
+      <h1 class="title">Onitama</h1>
       <div class="menu-container">
-        <div class="menu-box"></div>
-        <div id="start" class="menu start-inactive">Start Game</div>
-        <div id="how-to-play" class="menu">How to Play</div>
-        <div id="all-move-cards" class="menu">Movement Cards (WIP)</div>
-        <div id="linkedin" class="menu">
-          <a href="https://www.linkedin.com/in/bill-camarco" target="_blank" class="link-tab">LinkedIN</a>
-        </div>
-        <div id="github" class="menu">
-          <a href="https://github.com/Bill-the-dev" target="_blank" class="link-tab">GitHub</a>
+        <div class="menu-box">
+          <div id="start" class="menu start-inactive">Start Game</div>
+          <div id="how-to-play" class="menu">How to Play</div>
+          <div id="all-move-cards" class="menu">Movement Cards (WIP)</div>
+          <div id="linkedin" class="menu">
+            <a href="https://www.linkedin.com/in/bill-camarco" target="_blank" class="link-tab">LinkedIN</a>
+          </div>
+          <div id="github" class="menu">
+            <a href="https://github.com/Bill-the-dev" target="_blank" class="link-tab">GitHub</a>
+          </div>
         </div>
       </div>
       <!--grid layout for overall page, fr -->
@@ -82,10 +80,12 @@
         </div>
       </div>           
       <div class="on-deck-row">
+        <div class="turn-circle turn-red-circle">Red's Turn!</div>
         <div class="move-card" id="on-deck-card" data-card="3">
           <div class="front">O</div>
           <div class="back inactive-card" id="back3"></div>
         </div>
+        <div class="turn-circle turn-blue-circle">Blue's Turn!</div>
       </div>
       <div class="player-row">
         <div class="move-card" data-card="2">

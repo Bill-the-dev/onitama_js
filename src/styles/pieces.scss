@@ -1,0 +1,48 @@
+#pawn {
+  box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+
+
+.blue-student-piece.inactive-pawn  {
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
+}
+
+.blue-master-piece.inactive-pawn  {
+  width: 5vh;
+  height: 5vh;
+  background-image: linear-gradient(to bottom left, #0099f7 10%,  #81eff9 100%);
+}
+
+.red-student-piece.inactive-pawn  {
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%);
+}
+
+.red-master-piece.inactive-pawn  {
+  width: 5vh;
+  height: 5vh;
+  background-image: linear-gradient(to bottom left, #f8a7a6 0%, #ce0502 100%); 
+}
+
+.red-master-piece.active-pawn,
+.blue-master-piece.active-pawn {
+  width: 5vh;
+  height: 5vh;
+  background-image: linear-gradient(to bottom left, #f8f5d7 10%,  #efeb78 100%);
+  transform: scale(1.2);
+}
+
+.red-student-piece.active-pawn, 
+.blue-student-piece.active-pawn {
+  width: 4vh;
+  height: 4vh;
+  border-radius: 50%;
+  background-image: linear-gradient(to bottom left, #f8f5d7 10%,  #efeb78 100%);
+  transform: scale(1.2);
+}

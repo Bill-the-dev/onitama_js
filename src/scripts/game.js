@@ -83,7 +83,6 @@ export default class Game {
         if (that.board.isEmpty(allMoves[i]) === true) {
           realMoves.push(allMoves[i]);
         } else {
-
           if ((that.board.getPiece(allMoves[i])).color !== that.player.color.toLowerCase()) {
             realMoves.push(allMoves[i]);
           }
@@ -105,7 +104,6 @@ export default class Game {
           let col = startPos[1] + moves[j][1];
           possiblePos.push([row, col]);
         }
-
         return possiblePos;
       } else {
         console.log("Card is not in your hand");  // all returning else
@@ -255,11 +253,19 @@ export default class Game {
     let playedCard = document.querySelector(".active-card");
     let deckCard = document.querySelector("#back3");
     let body = document.querySelector(".body");
+    let turnRedCircle = document.querySelector(".turn-red-circle") 
+    let turnBlueCircle = document.querySelector(".turn-blue-circle") 
     if (that.currentPlayerIdx === 0) {
       // body.classList.remove("turn-blue")
-      body.classList.add("turn-red");
+      body.classList.replace("turn-blue", "turn-red");
+      turnBlueCircle.style.visibility = 'hidden';
+      turnRedCircle.style.visibility = 'visible';
+      
     } else {
-      body.classList.add("turn-blue")
+      body.classList.replace("turn-red", "turn-blue")
+      turnRedCircle.style.visibility = 'hidden';
+      turnBlueCircle.style.visibility = 'visible';
+
     }
 
 
