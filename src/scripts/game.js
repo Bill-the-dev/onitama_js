@@ -60,6 +60,7 @@ export default class Game {
     this.onDeckCard = this.deck.deal();
     this.activeGame = true;
     this.board.setBoard();
+    this.swapClickEvents("red");
   }
 
   // all moves
@@ -284,6 +285,20 @@ export default class Game {
   }
 
 
+
+  swapClickEvents(color) {
+    debugger;
+    let allPawns = document.querySelectorAll("#pawn");
+    allPawns.forEach(function (pawn) {
+      if (pawn.classList.contains(`${color}-student-piece`)
+        || pawn.classList.contains(`${color}-master-piece`)) {
+        pawn.style.pointerEvents = "none";
+      } else {
+        pawn.style.pointerEvents = "all";
+      }
+    });
+  }
+
   viewSwapTurn() {
     let that = this;
     let playedCard = document.querySelector(".active-card");
@@ -294,22 +309,23 @@ export default class Game {
 
 
     if (that.currentPlayerIdx === 0) {
-      // body.classList.remove("turn-blue")
       body.classList.replace("turn-blue", "turn-red");
       turnBlueCircle.style.visibility = 'hidden';
       turnRedCircle.style.visibility = 'visible';
+      that.swapClickEvents("blue");
 
     } else {
       body.classList.replace("turn-red", "turn-blue");
       turnRedCircle.style.visibility = 'hidden';
       turnBlueCircle.style.visibility = 'visible';
-
+      that.swapClickEvents("red");
     }
 
 
     // squares remove highlight
     let allSquares = document.getElementsByClassName('square');
     for (let i = 0; i < allSquares.length; i++) {
+      // allSquares[i].classList.replace("active", "inactive");
       allSquares[i].classList.remove("active");
       allSquares[i].classList.add("inactive");
     }
@@ -318,6 +334,7 @@ export default class Game {
     let allPawns = document.querySelectorAll("#pawn");
     allPawns.forEach(function (pawn) {
       if (pawn.classList.contains("active-pawn")) {
+        // pawn.classList.replace("active-pawn", "inactive-pawn");
         pawn.classList.remove("active-pawn");
         pawn.classList.add("inactive-pawn");
       }
