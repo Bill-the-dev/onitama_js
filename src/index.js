@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.remove("turn-blue");
         body.classList.remove("turn-red");
         history.go(0);
-      }, 3001);
+      }, 501);
     }
 
   });

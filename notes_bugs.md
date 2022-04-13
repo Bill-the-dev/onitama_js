@@ -1,14 +1,14 @@
 ## Known Bugs && WIP
  
-`grid.placePiece` and `grid.removePiece`
+[RESOLVED]`grid.placePiece` and `grid.removePiece`
   - possible error, does not remove opposite color object if capture?
 
 
-`grid.winStone` and `grid.winStream`
+[RESOLVED]`grid.winStone` and `grid.winStream`
   - designed to set grid attr to the winning color on true
   - have not decided where to call, issue with place and remove methods need resolution first
 
-*How to Play modal*
+[RESOLVED]*How to Play modal*
 - HTML formatting not correct.  Font issue? Pojo issue?
 
 
@@ -18,7 +18,8 @@
 *Turn transition card* 
 - Flip transluscent over to indicate blue/red turn. Above and below the onDeck.
 
-
+*Possible issue with card rotation*
+- Noticed with Mantis card displaying the wrong pattern, only happens sometimes.  Perhaps due to a doubling of a card that is not behaving visibly?
 
 ## Design and Structure
 

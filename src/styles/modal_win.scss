@@ -132,18 +132,31 @@ ul {
       padding: 0.5rem;
     }
   }
-  .gif-container {
-    padding: 0.5rem;
+}
+
+.gif-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  
+  img {
+    max-width:40vw;
+    max-height:40vw;
+    object-fit: contain;
   }
 }
 
 .about {
   margin-left: 1rem;
   margin-right: 1rem;
+  margin-bottom: 3rem;
   p {
     padding-top: 0.5rem;
   }
 }
+
+
 
 
 

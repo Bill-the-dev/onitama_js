@@ -38,6 +38,9 @@ export const modalFill =
               <li>Select (click) the tile to move and end your turn.</li>
               <li>If the tile contains an enemy pawn, it will be 'captured' and removed from the board.</li>
             </ul>
+              <div class="gif-container">
+                <img src="https://i.imgur.com/VW5cT13.gif" alt="Move and Attack" />
+              </div>
           </div>
           <div class="htp-two section">
             <h3 class="htp-subtitle">2. Swap Turns and Cards</h3>
@@ -59,14 +62,14 @@ export const modalFill =
               <h3 id="p-win-type">Way of the Stone:</h3>
               <p>Win by capturing your opponent's 'Master' pawn.</p>
               <div class="gif-container">
-                (gif - stone)
+                <img src="https://i.imgur.com/22sr0Oq.gif" alt="Way of Stone" />
               </div>
   
               <h3 id="p-win-type">Way of the Stream:</h3>
               <p>Win by moving your own 'Master' into your opponents 'Temple Arch' space (the 'Master' starting space).
               </p>
               <div class="gif-container">
-                (gif - stream)
+                <img src="https://i.imgur.com/vYot6EY.gif" alt="Way of Stream" />
               </div>
             </div>
   
