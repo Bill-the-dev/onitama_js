@@ -259,8 +259,10 @@ export default class Game {
   }
 
   checkWin() {
-    // returns [colorStr, typeStr]  || false
+    debugger
+    let that = this;
     if (that.board.checkWinStone() !== false ){
+      debugger
       let winResults = that.board.checkWinStone()
       this.activeGame = false
       this.gameWin = true 
@@ -269,6 +271,7 @@ export default class Game {
       return true
     }
     if (that.board.checkWinStream() !== false) {
+      debugger
       let winResults = that.board.checkWinStream()
       this.activeGame = false
       this.gameWin = true;

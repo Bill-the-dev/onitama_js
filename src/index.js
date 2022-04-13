@@ -118,6 +118,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   });
 
+  addGlobalEventListener("click", "#btn-restart", e => {
+    let body = document.querySelector(".body");
+    body.classList.add("turn-null");
+
+    setTimeout(() => {
+      console.log('restart')
+      body.classList.remove("turn-blue");
+      body.classList.remove("turn-red");
+      history.go(0);
+    }, 500);
+  })
+
 
 });
 

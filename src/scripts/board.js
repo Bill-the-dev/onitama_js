@@ -72,14 +72,20 @@ export default class Board {
     }
   }
   
-  
   // win condition capture
   checkWinStone() {
     let masterRed = document.querySelector(".red-master-piece");
     let masterBlue = document.querySelector(".blue-master-piece");
-    !masterBlue ? ["Red", "Stone"] : false
-    !masterRed ? ["Blue", "Stone"] : false
+    if (masterBlue === null) {
+      return ["Red", "Stone"]
+    }
+    if (masterRed === null) {
+      return ["Blue", "Stone"]
+    }
+    return false
   }
+  // !masterBlue ? ["Red", "Stone"] : false
+  // !masterRed ? ["Blue", "Stone"] : false
 
   // win condition shrine
   checkWinStream() {

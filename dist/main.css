@@ -223,6 +223,7 @@ header {
   display: grid;
   grid-template-columns: repeat(5, 9vh);
   grid-template-rows: repeat(5, 9vh);
+  z-index: 1;
 }
 
 .opponent-row {
@@ -354,6 +355,141 @@ font-family: 'Poppins', sans-serif;
 font-family: 'Quicksand', sans-serif;
 */
 /* Grid Layout help: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout */
+.modal__win {
+  border: 3px outset #adadad;
+  display: none;
+  flex-direction: column;
+  grid-column: 2;
+  grid-row: 3;
+  align-items: center;
+  justify-content: space-around;
+  padding: 2rem;
+  z-index: 10;
+  font-family: "Quicksand", sans-serif;
+  background-color: #fffffc;
+  background-image: linear-gradient(to bottom, #f0f0d7 0%, #dedacf 74%);
+  border-radius: 6px;
+  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.5);
+}
+
+.win-color {
+  z-index: 10;
+  font-size: 3rem;
+}
+
+.win-type {
+  z-index: 10;
+  font-size: 2.5rem;
+}
+
+#btn-restart {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 6vh;
+  width: 25vh;
+  font-size: 1.5rem;
+  background-color: aliceblue;
+  border-radius: 6px;
+  box-shadow: 0px, 3px, 18px, rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.modal__howTo {
+  height: 100%;
+  max-width: 100%;
+  display: flex;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  display: flex;
+  background-color: #FFF;
+  height: 100%;
+  width: 60%;
+  padding: 1em;
+}
+
+.modal__fill {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1rem;
+  color: #302f2f;
+  z-index: 4;
+  overflow: auto;
+}
+
+.modal__fill-active {
+  visibility: visible;
+  z-index: 3;
+}
+
+.how-to-play {
+  padding: 1rem;
+}
+
+.htp-title {
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 1rem;
+}
+
+.htp-title-description {
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 1rem;
+  padding-top: 0.5rem;
+}
+
+.section {
+  padding: 1rem;
+}
+
+.htp-subtitle {
+  font-size: 1.5rem;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-bottom: 0.5rem;
+}
+
+ul {
+  padding-left: 1rem;
+  list-style: circle;
+}
+ul li {
+  padding-top: 0.5rem;
+}
+
+.win-types {
+  padding-top: 0.5rem;
+}
+.win-types #p-win-type {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.win-types #p-win-type + p {
+  font-style: italic;
+  padding: 0.5rem;
+}
+.win-types .gif-container {
+  padding: 0.5rem;
+}
+
+.about {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.about p {
+  padding-top: 0.5rem;
+}
+
 .move-card {
   width: 16vh;
   height: 12vh;
