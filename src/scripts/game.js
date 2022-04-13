@@ -65,7 +65,9 @@ export default class Game {
 
   // all moves
   possibleMoves(card, startPos) {  // all possible
+    debugger
     let that = this;
+    if (!card || !startPos) return null
     if (that.currentPlayerIdx === 0) {
       return that.blueMoves(card, startPos);
     } else {
@@ -75,7 +77,9 @@ export default class Game {
 
   // limits actual moves by empty and color
   allowedMoves(card, startPos) {
+    debugger
     let that = this;
+    if (!card || !startPos) return false
 
     if (!that.board.validPos(startPos)) return false;
     let allMoves = that.possibleMoves(card, startPos);
@@ -365,6 +369,8 @@ export default class Game {
         }, 600)
       );
     }, 1000);
+    this.activeCard = null
+    this.activePawn = null
   }
 
   // card remove highlight
@@ -378,7 +384,9 @@ export default class Game {
 
 
   viewMoves() {
+    debugger
     let that = this;
+    if (!that.targetCard || !that.targetPos) return null
     let highlightMoves = that.allowedMoves(that.targetCard, that.targetPos);
     let viewSquares = [];
     for (let i = 0; i < highlightMoves.length; i++) {
