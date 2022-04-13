@@ -10,57 +10,31 @@ export default class Deck {
   }
 
   getCards() {
-    debugger
     let cards = [];
     let i = cards.length;
     while (i < 5) {
       let cardIdx = Math.floor(Math.random() * this.moveCards.length);
       if (!cards.includes(this.moveCards[cardIdx])) {
-        debugger
         let card = this.moveCards[cardIdx]
         cards.push(card);
-        // cards.push(cardIdx);
         i++;
       }
-      console.log(cards.length)
-      console.log(cards)
+      // console.log(cards.length)
+      // console.log(cards)
     }
     return cards;
-
-    // return this.moveCards[cardIdx];
   }
+
   deal() {
-    debugger
     let cards = this.getCards();
     
-    for (let i = 0; i < cards.length; i++) {
-      debugger      
+    for (let i = 0; i < cards.length; i++) {    
       this.viewDealCard(cards[i]);
       this.viewToggleFlipAll();
       this.currentCards.push(cards[i]);
     }
-   
-    
-
     return cards;
   }
-  // OLD DOUBLED
-  // getCard() {
-  //   let cardIdx = Math.floor(Math.random() * this.moveCards.length);
-  //   return this.moveCards[cardIdx];
-  // }
-  // deal() {
-  //   let card = this.getCard();
-  //   if (!this.currentCards.includes(card)) {
-  //     this.viewDealCard(card);
-  //     this.viewToggleFlipAll();
-  //     this.currentCards.push(card);
-
-  //   } else {
-  //     this.deal();
-  //   }
-  //   return card;
-  // }
 
   // toggle is_flipped on/off
   viewToggleFlipAll() {
@@ -84,7 +58,6 @@ export default class Deck {
 
   // initial deal
   viewDealCard(card) {
-    debugger
     let name = card[0].toLowerCase();
     for (let i = 0; i < imgSources.length; i++) {
       if (imgSources[i].includes(name)) {

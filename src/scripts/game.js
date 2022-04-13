@@ -47,10 +47,9 @@ export default class Game {
 
   // deal alternates between players until 4, then on-deck
   dealCard(card) {
-    debugger
     // let card = this.deck.deal(i);
     this.currentPlayer.dealCard(card);
-    console.log(this.currentPlayer.hand)
+    // console.log(this.currentPlayer.hand)
     this.swapTurn();
   }
 
@@ -58,7 +57,6 @@ export default class Game {
   start() {
     let cards = this.deck.deal()
     for (let i = 0; i < 4; i++) {
-      debugger
       this.dealCard(cards[i]);
     }
     this.onDeckCard = cards[4];
@@ -66,12 +64,11 @@ export default class Game {
     this.board.setBoard();
     this.swapClickEvents("red");
     // this.deck.viewToggleFlipAll();
-    console.log(this.deck.currentCards)
+    // console.log(this.deck.currentCards)
   }
 
   // all moves
   possibleMoves(card, startPos) {  // all possible
-    // debugger
     let that = this;
     if (!card || !startPos) return null
     if (that.currentPlayerIdx === 0) {
@@ -83,7 +80,6 @@ export default class Game {
 
   // limits actual moves by empty and color
   allowedMoves(card, startPos) {
-    // debugger
     let that = this;
     if (!card || !startPos) return false
 
@@ -242,8 +238,7 @@ export default class Game {
   }
 
   async viewSwapUsedCard(playedCardEl, deckCardEl) {
-    console.log("in swap used");
-    debugger
+    // console.log("in swap used");
     let that = this;
     let currentHand = that.player.hand;
     let playedCard = that.currentCard(playedCardEl);
@@ -298,7 +293,6 @@ export default class Game {
 
 
   swapClickEvents(color) {
-    // debugger;
     let allPawns = document.querySelectorAll("#pawn");
     allPawns.forEach(function (pawn) {
       if (pawn.classList.contains(`${color}-student-piece`)
@@ -391,7 +385,6 @@ export default class Game {
 
 
   viewMoves() {
-    // debugger
     let that = this;
     if (!that.targetCard || !that.targetPos) return null
     let highlightMoves = that.allowedMoves(that.targetCard, that.targetPos);
