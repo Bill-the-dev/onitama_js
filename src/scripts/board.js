@@ -89,18 +89,17 @@ export default class Board {
 
   // win condition shrine
   checkWinStream() {
-    debugger;
     let that = this;
     let masterRed = document.querySelector(".red-master-piece");
     let masterBlue = document.querySelector(".blue-master-piece");
-    console.log(masterBlue);
-    console.log(masterRed);
+    // console.log(masterBlue);
+    // console.log(masterRed);
     if (masterRed.parentElement.id === "[0,2]") {
       return ["Red", "Stream"];
     } else if (masterBlue.parentElement.id === "[4,2]") {
       return ["Blue", "Stream"];
     } else {
-      console.log("nobody wins yet");
+      // console.log("nobody wins yet");
       return false 
     }
   }
@@ -147,12 +146,6 @@ export default class Board {
     this.placePiece([4, 4], pawnR5);
 
   }
-
-  sayHi() {
-    console.log('hiiiiii');
-  }
-
-
 }
 
 // export default Board; 

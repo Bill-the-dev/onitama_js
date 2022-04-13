@@ -16,7 +16,6 @@ export default class Deck {
   deal() {
     let card = this.getCard();
     if (!this.currentCards.includes(card)) {
-      // debugger
       this.viewDealCard(card);
       this.viewToggleFlipAll();
       this.currentCards.push(card);
@@ -39,7 +38,7 @@ export default class Deck {
   async viewToggleFlipTurn() {
     let that = this;
     let turnCard = document.querySelector(".move-card .active-card");
-    // debugger
+
     turnCard.parentElement.classList.toggle("is_flipped")
 
     let deckCard = document.querySelector("#on-deck-card");

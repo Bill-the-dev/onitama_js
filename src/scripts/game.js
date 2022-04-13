@@ -99,7 +99,7 @@ export default class Game {
     let that = this;
     for (let i = 0; i < that.player.hand.length; i++) {
       if (that.player.hand[i] === card) {  // changed from includes
-        console.log("ok");
+        // console.log("ok");
         let moves = that.player.hand[i].slice(1);
         let possiblePos = [];
         for (let j = 0; j < moves.length; j++) {
@@ -109,14 +109,14 @@ export default class Game {
         }
         return possiblePos;
       } else {
-        console.log("Card is not in your hand");  // all returning else
+        // console.log("Card is not in your hand");  // all returning else
       }
     }
   }
 
   oppMoves(moves) {  // flips opponent possible pos 
     let newMoves = [];
-    console.log(moves);
+    // console.log(moves);
     for (let i = 0; i < moves.length; i++) {
       let subArr = [];
       for (let j = 0; j < moves[0].length; j++) {
@@ -146,7 +146,7 @@ export default class Game {
         }
         return possiblePos;
       } else {
-        console.log("Card is not in your hand");
+        // console.log("Card is not in your hand");
       }
     }
   }
@@ -159,25 +159,24 @@ export default class Game {
       if (pawn.classList.contains("active-pawn")) {
         that.activePawn = pawn;
         that.targetPos = that.currentPos(pawn);
-        console.log("Found active pawn!");
+        // console.log("Found active pawn!");
       }
     });
 
     allCards.forEach(function (card) {
       if (card.classList.contains("active-card")) {
-        console.log("Found active card!");
+        // console.log("Found active card!");
         that.activeCard = card;
         that.targetCard = that.currentCard(card);
       }
     });
 
     if (that.activePawn !== null && that.activeCard !== null) {
-      console.log("Both Active!");
+      // console.log("Both Active!");
       that.targetMoves = that.viewMoves();  // highlight pos 
     } else {
       return false;
     }
-    // debugger
   }
 
   // sets game.targetPos in checkHighlight
@@ -194,7 +193,7 @@ export default class Game {
 
   // sets game.targetCard in checkHighlight
   currentCard(cardEl) {
-    console.log("in currentCard");
+    // console.log("in currentCard");
     let that = this;
     let cardStr = cardEl.id.slice(4);
     let cardNum = parseInt(cardStr);
@@ -209,7 +208,6 @@ export default class Game {
     let that = this;
     let posStart = that.currentPos(that.activePawn);
     let posEnd = that.convertStrPos(posEndEle.id);
-    // debugger;
     if (board.grid[posEnd[0]][posEnd[1]] !== null) {
       that.board.removePiece(posEnd);
       that.board.viewRemovePiece(posEnd);  // takes piece
@@ -217,11 +215,9 @@ export default class Game {
     that.board.movePiece(posStart, posEnd);
     // coded movePiece calls viewPlacePiece
     let piece = that.board.getPiece(posEnd); // Piece
-    // debugger
     that.board.viewRemovePiece(posStart); // remove old pos
     
     // WIN CHECK
-    debugger;
     setTimeout(() => {
       if (that.checkWin()) {
         that.modalWin()
@@ -235,14 +231,13 @@ export default class Game {
   }
 
   async viewSwapUsedCard(playedCardEl, deckCardEl) {
-    console.log("in swap used");
+    // console.log("in swap used");
     let that = this;
     let currentHand = that.player.hand;
     let playedCard = that.currentCard(playedCardEl);
     let deckCard = that.onDeckCard;
     let playedCardIdx = null;
     for (let i = 0; i < currentHand.length; i++) {
-      // debugger
       if (playedCard === currentHand[i]) playedCardIdx = i;
     }
     // board swap
@@ -251,7 +246,6 @@ export default class Game {
     currentHand[playedCardIdx] = newPlayerCard;
     deckCard = newDeckCard;
     this.onDeckCard = newDeckCard; // new
-    // debugger;
 
     // view swap
     that.deck.viewDealSwap(newPlayerCard, playedCardEl);
@@ -259,10 +253,9 @@ export default class Game {
   }
 
   checkWin() {
-    debugger
+
     let that = this;
     if (that.board.checkWinStone() !== false ){
-      debugger
       let winResults = that.board.checkWinStone()
       this.activeGame = false
       this.gameWin = true 
@@ -271,7 +264,6 @@ export default class Game {
       return true
     }
     if (that.board.checkWinStream() !== false) {
-      debugger
       let winResults = that.board.checkWinStream()
       this.activeGame = false
       this.gameWin = true;
@@ -291,31 +283,9 @@ export default class Game {
     modalWin.style.display = 'flex';
   }
 
-  // checkWinStream() {
-  //   debugger;
-  //   let that = this
-  //   let masterRed = document.querySelector(".red-master-piece");
-  //   let masterBlue = document.querySelector(".blue-master-piece");
-  //   console.log(masterBlue)
-  //   console.log(masterRed)
-  //   if (masterRed.parentElement.id === "[0,2]") {
-  //     return this.gameWin("red", "stream")
-  //   } else if (masterBlue.parentElement.id === "[4,2]") {
-  //     return this.gameWin("blue", "stream")
-  //   }
-  // }
-
-  // checkWinStone() {
-
-  // }
-
-  // gameWin(colorStr, typeStr) {
-  //   console.log(`${colorStr} wins by ${typeStr}!`)
-  // }
 
   viewSwapTurn() {
     let that = this;
-    // debugger
     let playedCard = document.querySelector(".active-card");
     let deckCard = document.querySelector("#back3");
     let body = document.querySelector(".body");

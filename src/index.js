@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // pawn - select and highlight
   addGlobalEventListener("click", "#pawn", e => {
-    console.log("You clicked a pawn");
+    // console.log("You clicked a pawn");
     let allPawns = document.querySelectorAll("#pawn");
     allPawns.forEach(function (pawn) {
       if (pawn.classList.contains("active-pawn")) {
@@ -38,15 +38,15 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.classList.remove("inactive-pawn");
     e.target.classList.add("active-pawn");
     if (game.checkHighlight()) {
-      console.log("Check highlight pass");
+      // console.log("Check highlight pass");
     } else {
-      console.log("Check highlight fail");
+      // console.log("Check highlight fail");
     }
   });
 
   // card - select and highlight 
   addGlobalEventListener("click", ".back", e => {
-    console.log("You clicked a card");
+    // console.log("You clicked a card");
     let allCards = document.querySelectorAll(".back");
     allCards.forEach(function (card) {
       card.classList.remove("active-card");
@@ -55,9 +55,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.classList.remove("inactive-card");
     e.target.classList.add("active-card");
     if (game.checkHighlight()) {
-      console.log("Check highlight pass");
+      // console.log("Check highlight pass");
     } else {
-      console.log("Check highlight fail");
+      // console.log("Check highlight fail");
     }
 
   });
@@ -76,14 +76,14 @@ document.addEventListener("DOMContentLoaded", () => {
   // Modal How To on
   addGlobalEventListener("click", "#how-to-play", e => {
     e.preventDefault();
-    console.log("on");
+    // console.log("on");
     modalHowTo.classList.add("modal__fill-active");
   });
 
   // Modal How To off
   modalHowTo.addEventListener("click", e => {
     e.preventDefault();
-    console.log("off");
+    // console.log("off");
     modalHowTo.classList.remove("modal__fill-active");
   });
 
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let turnBlueCircle = document.querySelector(".turn-blue-circle") 
     
     if (game.activeGame === false) {
-      console.log("You clicked start");
+      // console.log("You clicked start");
       game.start();
       
       startEle.classList.remove("start-inactive");
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
       turnRedCircle.style.visibility = 'hidden';
       turnBlueCircle.style.visibility = 'visible';
     } else {
-      console.log("You clicked end game");
+      // console.log("You clicked end game");
       body.classList.add("turn-null");
       
       setTimeout(() => {
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.add("turn-null");
 
     setTimeout(() => {
-      console.log('restart')
+      // console.log('restart')
       body.classList.remove("turn-blue");
       body.classList.remove("turn-red");
       history.go(0);
@@ -133,23 +133,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 
-// addGlobalEventListener("click", ".start-active", e => {
-  // });
 
-
-  // bindEvents() {
-  //   document.querySelectorAll("ul li").forEach((li) => {
-  //     li.addEventListener("click", this.handleClick);
-  //   });
-  // }
-
-// // Get this:
-// addGlobalEventListener("click", "div", e => {
-//   console.log("hi")
-// })
-// // From this:
-// document.addEventListener("click", e => {
-//   if (e.target.matches("div")) {
-//     console.log("you clicked a div");
-//   }
-// })
