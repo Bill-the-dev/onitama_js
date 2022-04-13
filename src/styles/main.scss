@@ -115,8 +115,8 @@ header {
 
   .turn-circle {
     display: flex;
-    height: 12vh;
-    width: 12vh;
+    height: 13vh;
+    width: 13vh;
     border-radius: 50%;
     // border: 2px double gray;
     align-items: center;
@@ -124,7 +124,7 @@ header {
     margin: 2.5vh;
     font-family: 'Quicksand',
     sans-serif;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 700;
     box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, .2);
   }
