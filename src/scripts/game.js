@@ -46,26 +46,32 @@ export default class Game {
   }
 
   // deal alternates between players until 4, then on-deck
-  dealCard() {
-    let card = this.deck.deal();
+  dealCard(card) {
+    debugger
+    // let card = this.deck.deal(i);
     this.currentPlayer.dealCard(card);
+    console.log(this.currentPlayer.hand)
     this.swapTurn();
   }
 
   // event handled in index.js 
   start() {
+    let cards = this.deck.deal()
     for (let i = 0; i < 4; i++) {
-      this.dealCard();
+      debugger
+      this.dealCard(cards[i]);
     }
-    this.onDeckCard = this.deck.deal();
+    this.onDeckCard = cards[4];
     this.activeGame = true;
     this.board.setBoard();
     this.swapClickEvents("red");
+    // this.deck.viewToggleFlipAll();
+    console.log(this.deck.currentCards)
   }
 
   // all moves
   possibleMoves(card, startPos) {  // all possible
-    debugger
+    // debugger
     let that = this;
     if (!card || !startPos) return null
     if (that.currentPlayerIdx === 0) {
@@ -77,7 +83,7 @@ export default class Game {
 
   // limits actual moves by empty and color
   allowedMoves(card, startPos) {
-    debugger
+    // debugger
     let that = this;
     if (!card || !startPos) return false
 
@@ -236,7 +242,8 @@ export default class Game {
   }
 
   async viewSwapUsedCard(playedCardEl, deckCardEl) {
-    // console.log("in swap used");
+    console.log("in swap used");
+    debugger
     let that = this;
     let currentHand = that.player.hand;
     let playedCard = that.currentCard(playedCardEl);
@@ -291,7 +298,7 @@ export default class Game {
 
 
   swapClickEvents(color) {
-    debugger;
+    // debugger;
     let allPawns = document.querySelectorAll("#pawn");
     allPawns.forEach(function (pawn) {
       if (pawn.classList.contains(`${color}-student-piece`)
@@ -384,7 +391,7 @@ export default class Game {
 
 
   viewMoves() {
-    debugger
+    // debugger
     let that = this;
     if (!that.targetCard || !that.targetPos) return null
     let highlightMoves = that.allowedMoves(that.targetCard, that.targetPos);
