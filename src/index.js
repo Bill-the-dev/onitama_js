@@ -73,16 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
   let modalView = document.querySelector(".modal__fill");
   document.querySelector(".modal__fill").innerHTML = modalFill;
 
-  // const sanitizer = new Sanitizer(); 
-
   // Modal How To on
   addGlobalEventListener("click", "#how-to-play", e => {
     e.preventDefault();
     console.log("on");
-    // modalView.setHTML("Hellooooooo");
-    // modalView.innerHTML = modalFill;
-    // document.querySelector(".modal__fill").innerHTML = modalFill;
-    // document.querySelector(".modal__fill").innerHTML = modalFill;
     modalHowTo.classList.add("modal__fill-active");
   });
 

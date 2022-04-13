@@ -60,7 +60,7 @@ export default class Board {
     let posStr = JSON.stringify(pos);
     let square = document.getElementById(posStr);
     let child = square.firstChild;
-    setTimeout(() => square.removeChild(child), 1700);
+    setTimeout(() => square.removeChild(child), 800);
   }
 
   placePiece(pos, piece) {
@@ -74,8 +74,11 @@ export default class Board {
   
   
   // win condition capture
-  checkWinStone(endPos, piece) {
-    
+  checkWinStone() {
+    let masterRed = document.querySelector(".red-master-piece");
+    let masterBlue = document.querySelector(".blue-master-piece");
+    !masterBlue ? ["Red", "Stone"] : false
+    !masterRed ? ["Blue", "Stone"] : false
   }
 
   // win condition shrine
@@ -87,17 +90,18 @@ export default class Board {
     console.log(masterBlue);
     console.log(masterRed);
     if (masterRed.parentElement.id === "[0,2]") {
-      return this.gameWin("red", "stream");
+      return ["Red", "Stream"];
     } else if (masterBlue.parentElement.id === "[4,2]") {
-      return this.gameWin("blue", "stream");
+      return ["Blue", "Stream"];
     } else {
-      return console.log("nobody wins yet");
+      console.log("nobody wins yet");
+      return false 
     }
   }
-  gameWin(colorStr, typeStr) {
-    // probably want to end game in game instead...
-    return console.log(`${colorStr} wins by ${typeStr}!`)
-  }
+  // gameWin(colorStr, typeStr) {
+  //   console.log(`${colorStr} wins by ${typeStr}!`)
+  //   return [true, colorStr, typeStr] 
+  // }
 
   removePiece(pos) {
     return (this.grid[pos[0]][pos[1]] = null);

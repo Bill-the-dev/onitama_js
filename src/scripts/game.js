@@ -7,6 +7,8 @@ export default class Game {
   constructor() {
     this.activeGame = false;
     this.gameWin = false;
+    this.gameWinType = '';
+    this.gameWinColor = '';
     this.targetPos = null;    // checkHighlight
     this.targetCard = null;
     this.targetMoves = null;
@@ -217,6 +219,15 @@ export default class Game {
     let piece = that.board.getPiece(posEnd); // Piece
     // debugger
     that.board.viewRemovePiece(posStart); // remove old pos
+    
+    // WIN CHECK
+    debugger;
+    setTimeout(() => {
+      if (that.checkWin()) {
+        that.modalWin()
+      }
+    }, 1000);
+
     // TURN SWAP 
     setTimeout(() => {
       that.viewSwapTurn();
@@ -245,6 +256,36 @@ export default class Game {
     // view swap
     that.deck.viewDealSwap(newPlayerCard, playedCardEl);
     that.deck.viewDealSwap(newDeckCard, deckCardEl);
+  }
+
+  checkWin() {
+    // returns [colorStr, typeStr]  || false
+    if (that.board.checkWinStone() !== false ){
+      let winResults = that.board.checkWinStone()
+      this.activeGame = false
+      this.gameWin = true 
+      this.gameWinType = winResults[1]
+      this.gameWinColor = winResults[0]
+      return true
+    }
+    if (that.board.checkWinStream() !== false) {
+      let winResults = that.board.checkWinStream()
+      this.activeGame = false
+      this.gameWin = true;
+      this.gameWinType = winResults[1];
+      this.gameWinColor = winResults[0];
+      return true
+    }
+    return false
+  }
+
+  modalWin() {
+    let modalWin = document.querySelector(".modal__win");
+    let winColor = `${this.gameWinColor} Wins!`
+    let winType = `Way of ${this.gameWinType}`
+    document.querySelector(".win-color").innerHTML = winColor;
+    document.querySelector(".win-type").innerHTML = winType;
+    modalWin.style.display = 'flex';
   }
 
   // checkWinStream() {
@@ -278,9 +319,6 @@ export default class Game {
     let turnRedCircle = document.querySelector(".turn-red-circle");
     let turnBlueCircle = document.querySelector(".turn-blue-circle");
 
-    debugger
-    // that.board.checkWinStone();
-    that.board.checkWinStream();
 
     if (that.currentPlayerIdx === 0) {
       // body.classList.remove("turn-blue")
