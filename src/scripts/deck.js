@@ -78,14 +78,14 @@ export default class Deck {
     }
   }
 
-  // turn swap deal
+  // Turn swap 'sleight of hand'
   viewDealSwap(card, cardEl) {
     let that = this;
-    // remove old img
+    // removes img from 'used' card
     let child = cardEl.firstChild;
     cardEl.removeChild(child);
 
-    // set new img 
+    // sets on deck img to 'used' card 
     let name = card[0].toLowerCase();
     for (let i = 0; i < imgSources.length; i++) {
       if (imgSources[i].includes(name)) {
@@ -97,7 +97,7 @@ export default class Deck {
     }
   }
 
-  // flip opp cards, in last viewDealTo 
+  // Invert opponent row cards, all movement arrays (* -1) 
   viewInvertOppAll() {
     let oppCard4 = document.querySelector("#back4");
     let oppCard5 = document.querySelector("#back5");
