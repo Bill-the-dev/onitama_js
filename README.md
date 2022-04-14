@@ -25,6 +25,8 @@ Onitama is a strategy board game for two players. The player moves their pawns o
 
 The game is easy to learn thanks to its unique visual design.  It also allows for a high level of strategic gameplay with it's dynamic moveset. 
 
+[](https://i.imgur.com/8xkQrx0.gifv)
+
 ---
 
 ## Technologies 
@@ -90,19 +92,28 @@ The 5 movement cards are a populated randomly from a total set of 16.  As the mo
       }
     }
   }
+  
+  // Invert opponent row cards, all movement arrays (* -1) 
+  viewInvertOppAll() {
+    let oppCard4 = document.querySelector("#back4");
+    let oppCard5 = document.querySelector("#back5");
+
+    oppCard4.classList.toggle("is_inverted");
+    oppCard5.classList.toggle("is_inverted");
+  }
 ```
 
 ----
 
-## Bonus
+## Continued Development
   - Add additional movement cards from print game expansions
   - Add additional piece type and game modes from print game expansions
   - Add Multiplayer functionality (remote)
   - Add AI with difficulty levels
-  - Add card, piece capture, and game state animations
+  - Improve card, piece capture, and game state animations
 
 ---
 
-## Project Files Glossary
-  - [WIP]
+<!-- ## Project Files Glossary -->
+
 
