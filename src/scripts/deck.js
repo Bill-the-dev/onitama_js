@@ -156,10 +156,8 @@ export default class Deck {
 
   // modal deal
   modalDealCards() {
-    debugger
     // if () {
       for (let i = 0; i < allCards.length; i++) {
-        debugger
         let card = allCards[i];
         let name = card[0].toLowerCase();
         let nameShow = name[0].toUpperCase() + name.substring(1)
