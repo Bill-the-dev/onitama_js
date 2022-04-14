@@ -25,6 +25,9 @@ Onitama is a strategy board game for two players. The player moves their pawns o
 
 The game is easy to learn thanks to its unique visual design.  It also allows for a high level of strategic gameplay with it's dynamic moveset. 
 
+<!-- ![Gameplay](https://i.imgur.com/8xkQrx0.gif) -->
+<img src="https://i.imgur.com/8xkQrx0.gif" width="50%" height="50%"/>
+
 ---
 
 ## Technologies 
@@ -38,7 +41,7 @@ Onitama was built using only vanilla Javascript (ES6) and CSS.
 
 ## Gameplay
 
-In Onitama, users will be able to:
+In Onitama, players can:
   - Generate a random combination of (5) movement cards from the possible (16+)
   - Select and move their pawns on the 5x5 grid
   - Capture pawns (or be captured) as depicted in the movement cards
@@ -58,17 +61,60 @@ The 5 movement cards are a populated randomly from a total set of 16.  As the mo
   - Card selection highlights the active card that, when combined with a highlighted active pawn, depicts available moves as green spaces on the board. 
   - Opponent cards must be inverted and the movement pattern accurately depicted on the board for the current player's turn.
 
+```JS
+  // Turn swap 'sleight of hand'
+
+  // Turn swap toggle is_flipped
+  async viewToggleFlipTurn() {
+    let that = this;
+    
+    let turnCard = document.querySelector(".move-card .active-card");
+    turnCard.parentElement.classList.toggle("is_flipped");
+
+    let deckCard = document.querySelector("#on-deck-card");
+    deckCard.classList.toggle("is_flipped");
+  }
+  
+  // Turn swap img trade
+  viewDealSwap(card, cardEl) {
+    let that = this;
+    // removes img from 'used' card
+    let child = cardEl.firstChild;
+    cardEl.removeChild(child);
+
+    // sets on deck img to 'used' card 
+    let name = card[0].toLowerCase();
+    for (let i = 0; i < imgSources.length; i++) {
+      if (imgSources[i].includes(name)) {
+        let setBack = document.createElement("img");
+        setBack.className = "grid-graphic";
+        setBack.src = `${imgSources[i]}`;
+        cardEl.appendChild(setBack);
+      }
+    }
+  }
+  
+  // Invert opponent row cards, all movement arrays (* -1) 
+  viewInvertOppAll() {
+    let oppCard4 = document.querySelector("#back4");
+    let oppCard5 = document.querySelector("#back5");
+
+    oppCard4.classList.toggle("is_inverted");
+    oppCard5.classList.toggle("is_inverted");
+  }
+```
+
 ----
 
-## Bonus
+## Continued Development
   - Add additional movement cards from print game expansions
   - Add additional piece type and game modes from print game expansions
   - Add Multiplayer functionality (remote)
   - Add AI with difficulty levels
-  - Add card, piece capture, and game state animations
+  - Improve card, piece capture, and game state animations
 
 ---
 
-## Project Files Glossary
-  - [WIP]
+<!-- ## Project Files Glossary -->
+
 
