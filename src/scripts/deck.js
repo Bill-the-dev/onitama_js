@@ -38,21 +38,29 @@ export default class Deck {
 
   // toggle is_flipped on/off
   viewToggleFlipAll() {
-    let allCards = document.querySelectorAll(".move-card");
+    let allCards = document.querySelectorAll(".game-card");
     allCards.forEach(function (card) {
       card.classList.toggle("is_flipped");
+    });
+  }
+
+  modalToggleFlipAll() {
+    let allCards = document.querySelectorAll(".modal-card");
+    allCards.forEach( (card, index) => {
+      setTimeout(() => {
+        card.classList.toggle("is_flipped");
+      }, (50 * index));
     });
   }
 
   // toggle is_flipped for switch turn
   async viewToggleFlipTurn() {
     let that = this;
+    
     let turnCard = document.querySelector(".move-card .active-card");
-
     turnCard.parentElement.classList.toggle("is_flipped");
 
     let deckCard = document.querySelector("#on-deck-card");
-
     deckCard.classList.toggle("is_flipped");
   }
 
@@ -146,10 +154,41 @@ export default class Deck {
   }
 
 
+  // modal deal
+  modalDealCards() {
+    debugger
+    // if () {
+      for (let i = 0; i < allCards.length; i++) {
+        debugger
+        let card = allCards[i];
+        let name = card[0].toLowerCase();
+        let nameShow = name[0].toUpperCase() + name.substring(1)
+        let imgSource = imgSourcesObj[name]
+        let whichCard = document.getElementById(`modal-back-${i+1}`);
+  
+        // h2 name
+        let setBackName = document.createElement("h2");
+        setBackName.className = "back-name";
+        setBackName.innerHTML = nameShow;
+        whichCard.appendChild(setBackName);
+        
+        // img and src
+        let setBackImg = document.createElement("img");
+        setBackImg.className = "grid-graphic";
+        setBackImg.src = imgSource;
+        whichCard.appendChild(setBackImg);
+          
+      }
+    // }
+
+  }
+} 
 
 
 
-}
+
+
+
 // opponent, iterate (map) over (slice(1)) array => ele * -1
 const tiger = ["Tiger", [-1, 0], [2, 0]];                        // tiger
 const dragon = ["Dragon", [-1, 1], [-1, -1], [1, 2], [1, -2]];    // dragon
@@ -170,6 +209,25 @@ const cobra = ["Cobra", [0, -1], [1, 1], [-1, 1]];               // cobra
 
 const allCards = [tiger, dragon, frog, rabbit, crab, elephant, goose, rooster, monkey, mantis, horse, ox, crane, boar, eel, cobra];
 
+const imgSourcesObj = {
+  boar: "assets/onitama_grids/tpng/tgrid_boar.png",
+  cobra: "assets/onitama_grids/tpng/tgrid_cobra.png",
+  crab: "assets/onitama_grids/tpng/tgrid_crab.png",
+  crane: "assets/onitama_grids/tpng/tgrid_crane.png",
+  dragon: "assets/onitama_grids/tpng/tgrid_dragon.png",
+  eel: "assets/onitama_grids/tpng/tgrid_eel.png",
+  elephant: "assets/onitama_grids/tpng/tgrid_elephant.png",
+  frog: "assets/onitama_grids/tpng/tgrid_frog.png",
+  goose: "assets/onitama_grids/tpng/tgrid_goose.png",
+  horse: "assets/onitama_grids/tpng/tgrid_horse.png",
+  mantis: "assets/onitama_grids/tpng/tgrid_mantis.png",
+  monkey: "assets/onitama_grids/tpng/tgrid_monkey.png",
+  ox: "assets/onitama_grids/tpng/tgrid_ox.png",
+  rabbit: "assets/onitama_grids/tpng/tgrid_rabbit.png",
+  rooster: "assets/onitama_grids/tpng/tgrid_rooster.png",
+  tiger: "assets/onitama_grids/tpng/tgrid_tiger.png"
+};
+
 const imgSources = [
   "assets/onitama_grids/tpng/tgrid_boar.png",
   "assets/onitama_grids/tpng/tgrid_cobra.png",
@@ -188,7 +246,6 @@ const imgSources = [
   "assets/onitama_grids/tpng/tgrid_rooster.png",
   "assets/onitama_grids/tpng/tgrid_tiger.png"
 ];
-
 
 
 

@@ -95,3 +95,78 @@ export const modalFill =
         </div>
   `;
 
+  export const modalCards = 
+  `
+    <div class="all-cards-container">
+      <h1 class="all-cards-title">Movement Cards</h1>
+      <h3 class="all-cards-subtitle">Each game, a set of 5 cards will be selected at random.  More to come!</h3>
+
+      <div class="move-cards-list"> 
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-1"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-2"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-3"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-4"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-5"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-6"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-7"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-8"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-9"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-10"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-11"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-12"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-13"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-14"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-15"></div>
+        </div>
+        <div class="move-card modal-card">
+          <div class="front">O</div>
+          <div class="back inactive-card" id="modal-back-16"></div>
+        </div>
+      </div>
+    </div>
+  `;
+

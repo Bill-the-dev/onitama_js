@@ -1,11 +1,12 @@
 import "./index.scss"
 import Game from "./scripts/game.js";
 import Board from "./scripts/board";
-import { modalFill } from "./scripts/modal";
+import { modalFill, modalCards } from "./scripts/modal";
 document.addEventListener("DOMContentLoaded", () => {
 
   let game = new Game();
   let board = new Board();
+  let modalLoaded = false;
 
   // let deck = Deck;
   // let piece = Piece;
@@ -70,8 +71,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Modal consts
   let modalHowTo = document.querySelector(".modal__howTo");
+  let modalAllCards = document.querySelector(".modal__allCards");
   let modalView = document.querySelector(".modal__fill");
   document.querySelector(".modal__fill").innerHTML = modalFill;
+  document.querySelector(".modal__cards").innerHTML = modalCards;
+  
 
   // Modal How To on
   addGlobalEventListener("click", "#how-to-play", e => {
@@ -86,6 +90,29 @@ document.addEventListener("DOMContentLoaded", () => {
     // console.log("off");
     modalHowTo.classList.remove("modal__fill-active");
   });
+
+  // Modal All Cards on
+  addGlobalEventListener("click", "#all-move-cards", e => {
+    e.preventDefault();
+    // console.log("on");
+    modalAllCards.classList.add("modal__cards-active");
+    if (!modalLoaded) {
+      game.deck.modalDealCards();
+      modalLoaded = true;
+      game.deck.modalToggleFlipAll();
+    } else {
+      game.deck.modalToggleFlipAll();
+    }
+    // deals multiple times...
+  });
+  // Modal All Cards off
+  addGlobalEventListener("click", ".modal__allCards", e => {
+    e.preventDefault();
+    // console.log("on");
+    game.deck.modalToggleFlipAll()
+    modalAllCards.classList.remove("modal__cards-active");
+  });
+
 
   // Start / End game dynamic
   addGlobalEventListener("click", "#start", e => {

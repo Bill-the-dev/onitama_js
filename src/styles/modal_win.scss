@@ -61,7 +61,7 @@
   display: flex;
   background-color: #FFF;
   height: 100%;
-  width: 60%;
+  width: 70%;
   padding: 1em;
 }
 
@@ -76,6 +76,68 @@
 .modal__fill-active {
   visibility: visible;
   z-index: 3;
+}
+
+// --- MODAL ALL CARDS ---
+
+.modal__allCards {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__cards {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  color: #302f2f;
+  z-index: 4;
+  overflow: auto;
+}
+
+.modal__cards-active {
+  visibility: visible;
+  z-index: 3;
+}
+
+.all-cards-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2rem;
+  h1 {
+    font-size: 3rem;
+    justify-self: center;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    font-style: italic;
+    justify-self: center;
+    margin-bottom: 1rem;
+  }
+  .move-cards-list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    padding-bottom: 3rem;
+
+    .move-card {
+      width: 24vh;
+      height: 18vh;
+      margin: 1rem;
+    }
+  }
 }
 
 // --- MODAL FILL ---

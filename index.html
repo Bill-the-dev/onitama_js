@@ -21,11 +21,20 @@
 </head>
 
 <body class="body">
-  <!-- <div class="modal__howTo">
+  <!-- MODAL ABOUT / HOW TO PLAY -->
+  <!-- filled by modal.js -->
+  <div class="modal__howTo">
     <div class="modal">
       <div class="modal__fill" ></div>
     </div>
-  </div> -->
+  </div>
+  <!-- MODAL ALL CARDS -->
+  <!-- filled by modal.js -->
+  <div class="modal__allCards" style="visibility: none">
+    <div class="modal">
+      <div class="modal__cards"></div>
+    </div>
+  </div>
   <div id="container">    
     <div id="game">
       <h1 class="title">Onitama</h1>
@@ -33,7 +42,7 @@
         <div class="menu-box">
           <div id="start" class="menu start-inactive">Start Game</div>
           <div id="how-to-play" class="menu">How to Play</div>
-          <div id="all-move-cards" class="menu">Movement Cards (WIP)</div>
+          <div id="all-move-cards" class="menu">The Deck</div>
           <div id="linkedin" class="menu">
             <a href="https://www.linkedin.com/in/bill-camarco" target="_blank" class="link-tab">LinkedIN</a>
           </div>
@@ -79,29 +88,29 @@
       </div>
       
       <div class="opponent-row">
-        <div class="move-card" data-card="5">
+        <div class="move-card game-card" data-card="5">
           <div class="front">O</div>
           <div class="back inactive-card" id="back5"></div>
         </div>
-        <div class="move-card" data-card="4">
+        <div class="move-card game-card" data-card="4">
           <div class="front">O</div>
           <div class="back inactive-card" id="back4"></div>
         </div>
       </div>           
       <div class="on-deck-row">
         <div class="turn-circle turn-red-circle">Red's Turn!</div>
-        <div class="move-card" id="on-deck-card" data-card="3">
+        <div class="move-card game-card" id="on-deck-card" data-card="3">
           <div class="front">O</div>
           <div class="back inactive-card" id="back3"></div>
         </div>
         <div class="turn-circle turn-blue-circle">Blue's Turn!</div>
       </div>
       <div class="player-row">
-        <div class="move-card" data-card="2">
+        <div class="move-card game-card" data-card="2">
           <div class="front">O</div>
           <div class="back inactive-card" id="back2"></div>
         </div>
-        <div class="move-card" data-card="1">
+        <div class="move-card game-card" data-card="1">
           <div class="front">O</div>
           <div class="back inactive-card" id="back1"></div>
         </div>
@@ -109,12 +118,6 @@
     </div>
   </div>
 
-  <!-- MODAL ABOUT / HOW TO PLAY -->
-  <!-- filled by modal.js -->
-  <div class="modal__howTo" style="visibility: none">
-    <div class="modal">
-      <div class="modal__fill" style="list-style: circle"></div>
-    </div>
-  </div>
+
 </body>
 </html>

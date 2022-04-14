@@ -10,6 +10,23 @@
   margin: 1vh;
 }
 
+.modal-card {
+  margin: 0.5vh;
+}
+
+.modal-card .back {
+  display: flex;
+  flex-direction: column;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .grid-graphic {
+    height: 11vh;
+    width: 11vh;
+  }
+}
+
 .front,
 .back {
   height: 100%;
@@ -41,6 +58,11 @@
 }
 
 .on-deck-row .move-card .front {
+  background-image: linear-gradient(to top, #0099f7, #f11712);
+  color: #FFF;
+}
+
+.modal-card.move-card .front {
   background-image: linear-gradient(to top, #0099f7, #f11712);
   color: #FFF;
 }
@@ -82,7 +104,7 @@ background-image: linear-gradient(to bottom, #f0f0d7 0%, #dedacf 74%);
   box-shadow: 0px 3px 18px 3px rgba(249, 242, 45, 0.845)
 }
 
-.move-card .back.inactive-card {
+.move-card .back.inactive-card, .modal-card .back.back.inactive-card {
   box-shadow: 0px 3px 18px 3px rgba(0, 0, 0, .25);
 }
 

@@ -55,6 +55,8 @@ export default class Game {
 
   // event handled in index.js 
   start() {
+    let body = document.querySelector(".body");
+    let turnBlueCircle = document.querySelector(".turn-blue-circle");
     let cards = this.deck.deal()
     for (let i = 0; i < 4; i++) {
       this.dealCard(cards[i]);
@@ -62,9 +64,12 @@ export default class Game {
     this.onDeckCard = cards[4];
     this.activeGame = true;
     this.board.setBoard();
+
+    // Initial turn indicator
+    body.classList.add("turn-blue")
+    turnBlueCircle.style.visibility = 'visible';
+    turnBlueCircle.style.opacity = '1'
     this.swapClickEvents("red");
-    // this.deck.viewToggleFlipAll();
-    // console.log(this.deck.currentCards)
   }
 
   // all moves
@@ -315,14 +320,24 @@ export default class Game {
 
     if (that.currentPlayerIdx === 0) {
       body.classList.replace("turn-blue", "turn-red");
+      
       turnBlueCircle.style.visibility = 'hidden';
+      turnBlueCircle.style.opacity = '0';
+
       turnRedCircle.style.visibility = 'visible';
+      turnRedCircle.style.opacity = '1';
+      
       that.swapClickEvents("blue");
 
     } else {
       body.classList.replace("turn-red", "turn-blue");
+      
       turnRedCircle.style.visibility = 'hidden';
+      turnRedCircle.style.opacity = '0' 
+
       turnBlueCircle.style.visibility = 'visible';
+      turnBlueCircle.style.opacity = '1'
+      
       that.swapClickEvents("red");
     }
 
