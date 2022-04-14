@@ -25,8 +25,8 @@ Onitama is a strategy board game for two players. The player moves their pawns o
 
 The game is easy to learn thanks to its unique visual design.  It also allows for a high level of strategic gameplay with it's dynamic moveset. 
 
-<!-- ![Gameplay](https://i.imgur.com/8xkQrx0.gif) -->
-<img src="https://i.imgur.com/8xkQrx0.gif" width="50%" height="50%"/>
+![Gameplay](https://github.com/Bill-the-dev/onitama_js/blob/main/assets/gifs/Onitama2-1.gif)
+
 
 ---
 
